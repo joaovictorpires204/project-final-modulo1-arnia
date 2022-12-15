@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arnia || Login</title>
+    <link rel="icon" href="./assets/logo.ico" />
+    <script src="https://kit.fontawesome.com/6bdc8309a5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+        integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./assets/style.css" />
+    <script src="./js/user.js" defer></script>
+</head>
+
+<body>
+    <div id="boxes">
+        <div id="dark-box-1">&nbsp;</div>
+        <div id="light-box-1">&nbsp;</div>
+        <div id="polygon">&nbsp;</div>
+    </div>
+    <div id="icon-toggle">
+        <i id="icon-mode" class="fa-solid fa-toggle-off fa-3x" onclick="darkMode()"></i>
+        <i id="icon-moon" class="fa fa-moon fa-sm"></i>
+        <i id="icon-sun" class="fa fa-sun fa-xs"></i>
+    </div>
+
+    <div class="content-login">
+        <header>
+            <div>
+                <img src="./assets/logo-arnia.png" alt="" id="logo-photo">
+            </div>
+        </header>
+        <div class="login-card">
+            <div class="profile-circle">
+                <i class="fa-solid fa-user fa-4x"></i>
+            </div>
+            <form id="login" method="post" >
+                <section class="login-field">
+                    <label for="email">E-mail</label>
+                    <input type="email" name="email" id="email-login" class="input-login" required>
+                </section>
+                <section class="login-field">
+                    <div>
+                        <label for="pasword">Senha</label>
+                        <input type="password" name="pasword" id="password" class="input-login" required>
+                        <i class="fa-regular fa-eye-slash" id="eye" onclick="changeEye()"></i>
+                    </div>
+                </section>
+                <section>
+                    <button type="submit" class="login-button" onclick="window.location.href='list-page.html'">Entrar</button>
+                </section><!--  -->
+            </form>
+            <div class="login-card-footer">
+                <button type="button" class="signup-button" onclick="showModalSignup()">Cadastrar</button>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div id="modal-signup" class="modal-signup">
+        <div id="modal-signup-content">
+            <div class="profile-circle">
+                <i class="fa-solid fa-user fa-4x"></i>
+            </div>
+            
+            <form id="signup" method="post" class="signup-form">
+                <section class="signup-field">
+                    <label for="fullname">Nome Completo</label>
+                    <input type="text" name="name" id="name" class="input-signup">
+                </section>
+                <section class="signup-field">
+                    <label for="email">E-mail</label>
+                    <input type="email" name="email" id="email-signup" class="input-signup">
+                </section>
+                <section class="signup-field">
+                    <label for="password-signup">Senha</label>
+                    <input type="text" name="password-signup" id="password-signup" class="input-signup">
+                </section>
+                <section class="signup-field">
+                    <button type="submit" class="submit-signup">Cadastrar</button>
+                </section>
+            <div class="card-signup-footer">
+                <button type="button" class="cancel-signup" onclick="closeModalSignup()">Cancelar</button>
+            </div>
+            </form>
+        </div>
+</body>
+
+</html>

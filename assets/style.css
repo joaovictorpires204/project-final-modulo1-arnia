@@ -1,0 +1,567 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500&display=swap');
+
+/*Pattern for allthe pages*/
+:root {
+    --primary-color: #68519D;
+    --secondary-color: #F8B04E;
+    --tertiary-color: #2c2661;
+    --quartenary-color: #D7CAE5;
+    --quinary-color: #FBF0E2;
+    --senary-color: #121212;
+    --septenary-color: #f2f2f2;
+    --octonary--color: #fff;
+}
+
+body {
+    background-color: var(--octonary--color);
+    font-family: 'Poppins';
+    display: flex;
+}
+
+body.active {
+    background-color: var(--senary-color);
+}
+
+.container {
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+#boxes {
+    display: flex;
+}
+
+#dark-box-2 {
+    background-color: var(--primary-color);
+    width: 40px;
+    height: 150vh;
+}
+
+#light-box-2 {
+    background-color: var(--quartenary-color);
+    width: 8px;
+    height: 150vh;
+}
+
+#polygon {
+    position: fixed;
+    background-color: var(--secondary-color);
+    width: 250px;
+    height: 65vh;
+    right: 0px;
+    bottom: 0px;
+    clip-path: polygon(0 100%, 0 45%, 45% 0, 100% 0);
+    transform: rotate(180deg);
+    z-index: -2;
+}
+
+#icon-toggle {
+    padding-top: 20px;
+    position: absolute;
+    right: 15px;
+    cursor: pointer;
+}
+
+#icon-mode {
+    color: var(--primary-color);
+}
+
+#icon-mode.active {
+    transform: rotate(180deg);
+    color: var(--quartenary-color);
+}
+
+#icon-moon {
+    color: var(--tertiary-color);
+    position: relative;
+    right: 27px;
+    bottom: 12px;
+    z-index: -1;
+}
+
+#icon-sun {
+    color: var(--secondary-color);
+    position: relative;
+    z-index: -1;
+    right: 62px;
+    bottom: 12px;
+}
+
+/*Login page*/
+
+#dark-box-1 {
+    background-color: var(--primary-color);
+    width: 40px;
+    height: 100vh;
+}
+
+#light-box-1 {
+    background-color: var(--quartenary-color);
+    width: 8px;
+    height: 100vh;
+}
+
+.content-login {
+    padding: 50px;
+    padding-top: 60px;
+    display: flex;
+}
+
+.login-card {
+    background-color: var(--septenary-color);
+    width: 350px;
+    height: 450px;
+    border: 1px solid var(--octonary--color);
+    border-radius: 10px;
+    margin-top: 50px;
+    margin-left: 200px;
+    box-shadow: 0 0 25px 8px rgba(70, 34, 124, 0.497);
+    padding: 50px;
+    padding-top: 70px;
+
+}
+
+.profile-circle {
+    background-color: var(--septenary-color);
+    width: 120px;
+    height: 120px;
+    border: 8px solid var(--octonary--color);
+    border-radius: 50%;
+    position: absolute;
+    left: 626px;
+    top: 48px;
+    box-shadow: 0 0 25px 8px rgba(70, 34, 124, 0.497);
+}
+
+.fa-user {
+    position: relative;
+    left: 23px;
+    top: 15px;
+    color: var(--tertiary-color);
+}
+
+.login-field {
+    margin-top: 5px;
+    color: var(--primary-color);
+}
+
+.input-login {
+    width: 100%;
+    height: 35px;
+    border-style: none;
+    border: 1px solid var(--tertiary-color);
+    border-radius: 10px;
+    color: var(--tertiary-color);
+    margin-top: 5px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    position: relative;
+}
+
+.input-login:focus{
+    outline: 1;
+    outline-color: var(--primary-color);
+}
+
+.fa-eye-slash {
+    position: absolute;
+    right: 560px;
+    top: 304px;
+    color: var(--tertiary-color);
+    cursor: pointer;
+}
+
+.fa-eye {
+    position: absolute;
+    right: 560px;
+    top: 304px;
+    color: var(--tertiary-color);
+    cursor: pointer;
+}
+
+.login-button {
+    background-color: var(--primary-color);
+    width: 150px;
+    height: 35px;
+    border-style: none;
+    border: 1px solid var(--primary-color);
+    border-radius: 30px;
+    color: var(--octonary--color);
+    margin-top: 30px;
+    margin-left: 40px;
+}
+
+.login-button:hover {
+    background-color: var(--septenary-color);
+    color: var(--primary-color);
+}
+
+.login-card-footer {
+    margin-top: 70px;
+    margin-left: 70px;
+}
+
+.signup-button {
+    border: none;
+    color: grey;
+}
+
+.signup-button:hover {
+    color: rgb(79, 79, 79);
+    text-decoration: underline;
+}
+
+.modal-signup {
+    display: none;
+    background-color: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+#modal-signup-content {
+    background-color: var(--septenary-color);
+    width: 350px;
+    height: 450px;
+    margin-top: 110px;
+    margin-left: 515px;
+    border: 1px solid var(--octonary--color);
+    border-radius: 10px;
+    box-shadow: 0 0 25px 8px rgba(70, 34, 124, 0.497);
+    padding: 50px;
+    padding-top: 70px;
+
+}
+
+.signup-field {
+    color: var(--primary-color);
+}
+
+.input-signup {
+    width: 100%;
+    height: 35px;
+    border-style: none;
+    border: 1px solid var(--tertiary-color);
+    border-radius: 10px;
+    color: var(--tertiary-color);
+    margin-top: 5px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+}
+
+.input-signup:focus{
+    outline: 1;
+    outline-color: var(--primary-color);
+}
+
+.submit-signup {
+    background-color: var(--primary-color);
+    width: 150px;
+    height: 35px;
+    border-style: none;
+    border: 1px solid var(--primary-color);
+    border-radius: 30px;
+    color: var(--octonary--color);
+    margin-top: 30px;
+    margin-left: 40px;
+}
+
+.submit-signup:hover {
+    background-color: var(--septenary-color);
+    color: var(--primary-color);
+}
+
+.cancel-signup {
+    background-color: var(--septenary-color);
+    width: 100px;
+    height: 35px;
+    border-style: none;
+    color: grey;
+}
+
+.card-signup-footer {
+    margin-top: 20px;
+    margin-left: 65px;
+}
+
+.cancel-signup:hover {
+    color: rgb(79, 79, 79);
+    text-decoration: underline;
+}
+
+/*The list page*/
+
+.container-list-page {
+    padding: 30px;
+    padding-top: 70px;
+}
+
+.exit-icon {
+    display: flex;
+    padding-top: 40px;
+    margin-left: 30px;
+    margin-bottom: 920px;
+    color: var(--primary-color);
+    cursor: pointer;
+    transform: rotate(180deg);
+}
+
+#logo-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 60px;
+    margin-bottom: 10px;
+    margin-left: 15px;
+    gap: 14px;
+    font-size: 22px;
+    font-weight: bolder;
+    color: var(--primary-color);
+}
+
+#add-button {
+    background-color: var(--octonary--color);
+    width: 250px;
+    height: 40px;
+    border-style: none;
+    border: 1px solid var(--primary-color);
+    border-radius: 30px;
+    color: var(--tertiary-color);
+    margin-top: 10px;
+}
+
+#add-button:hover {
+    background-color: var(--primary-color);
+    color: #f2f2f2;
+}
+
+.filter-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.filter-button {
+    background-color: var(--octonary--color);
+    width: 120px;
+    height: 35px;
+    border: none;
+    border: 1px solid var(--primary-color);
+    border-radius: 20px;
+    font-size: 13px;
+    color: var(--primary-color);
+    margin-top: 80px;
+}
+
+.filter-button:hover {
+    background-color: var(--primary-color);
+    color: var(--octonary--color);
+}
+
+.search-placeholder {
+    width: 200px;
+    height: 35px;
+    border: 1px solid #2C2661;
+    border-radius: 20px;
+    padding-left: 10px;
+    margin-top: 78px;
+}
+
+.fa-magnifying-glass {
+    color: var(--primary-color);
+}
+
+.search-input {
+    background-color: none;
+    border: none;
+    width: 167px;
+    height: 33px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    color: var(--primary-color);
+}
+
+/*Modal*/
+
+.modal {
+    display: none;
+    background-color: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+} 
+
+.modal-content {
+    background-color: var(--octonary--color);
+    width: 600px;
+    height: 540px;
+    margin: 100px auto;
+    padding-top: 40px;
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+.card-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.list-form {
+    margin-top: 25px;
+    font-size: 14px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+    color: var(--primary-color);
+}
+
+.list-input {
+    width: 100%;
+    height: 40px;
+    border-style: none;
+    border: 1px solid var(--tertiary-color);
+    border-radius: 10px;
+    padding: 10px;
+    color: var(--tertiary-color);
+}
+
+.list-input:focus{
+    outline: 1;
+    outline-color: var(--primary-color);
+}
+
+.date-input {
+    width: 200px;
+    height: 40px;
+    border-style: none;
+    border: 1px solid var(--tertiary-color);
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    color: var(--tertiary-color);
+}
+
+.date-input:focus{
+    outline: 1;
+    outline-color: var(--primary-color);
+}
+
+.select {
+    width: 200px;
+    height: 40px;
+    border-style: none;
+    border: 1px solid var(--tertiary-color);
+    border-radius: 10px;
+    color: var(--tertiary-color);
+    padding: 10px;
+}
+
+.select:focus{
+    outline: 1;
+    outline-color: var(--primary-color);
+}
+
+.card-footer {
+    margin-top: 65px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#cancel-button {
+    border: none;
+    background-color: var(--octonary--color);
+    color: gray;
+}
+
+#cancel-button:hover {
+    text-decoration: underline;
+}
+
+.submit {
+    background-color: var(--octonary--color);
+    width: 120px;
+    height: 35px;
+    border: none;
+    border: 1px solid var(--primary-color);
+    border-radius: 30px;
+    color: var(--primary-color);
+}
+
+.submit:enabled {
+    background-color: var(--tertiary-color);
+    color: white;
+}
+
+.modal-trash{
+    display: block;
+    background-color: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+
+.modal-trash-content{
+    background-color: var(--septenary-color);
+    width: 300px;
+    height: 300px;
+}
+
+
+
+/* Table */
+.table-content {
+    width: 950px;
+    margin-top: 50px;
+}
+
+table {
+    background-color: var(--octonary--color);
+    font-size: 15px;
+}
+
+tr,
+td {
+    color: var(--tertiary-color)!important;
+}
+
+tr.active{
+    background-color: var(--senary-color);
+}
+
+#table-icons {
+    margin-left: 7px;
+}
+
+.fa-pen-to-square {
+    color: var(--tertiary-color);
+    cursor: pointer;
+}
+
+.fa-trash {
+    color: var(--quartenary-color);
+    cursor: pointer;
+}
+
+.Concluida {
+    color: #27AE60 !important;
+}
+
+.Em-andamento {
+    color: #F8B04E !important;
+}
+
+.Pausada {
+    color: #EB5757 !important;
+}
