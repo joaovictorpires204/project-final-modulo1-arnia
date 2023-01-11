@@ -116,19 +116,19 @@ const renderTasks = (tasks) => {
 }
 
 const getTasks = async () => {
-    const apiResponse = await fetch('http://localhost:3000/tasks')
+    const apiResponse = await fetch('https://app-project-modulo-arnia.herokuapp.com/tasks')
     const tasks = await apiResponse.json()
     renderTasks(tasks)
 }
 
 const getTask = async (id) => {
-    const apiResponse = await fetch(`http://localhost:3000/tasks/${id}`,)
+    const apiResponse = await fetch(`https://app-project-modulo-arnia.herokuapp.com/tasks/${id}`,)
     const task = apiResponse.json()
     return task
 }
 
 const addTask = async (task) => {
-    await fetch('http://localhost:3000/tasks', {
+    await fetch('https://app-project-modulo-arnia.herokuapp.com/tasks', {
         method: "POST",
         headers: {
             'Accept': 'application/json, text/plain, */*',
@@ -143,7 +143,7 @@ const addTask = async (task) => {
 }
 
 const editTask = async (id, task) => {
-    await fetch(`http://localhost:3000/tasks/${id}`, {
+    await fetch(`https://app-project-modulo-arnia.herokuapp.com/tasks/${id}`, {
         method: 'PUT',
         headers: {
             'Accept': 'application/json, text/plain, */*',
@@ -164,7 +164,7 @@ const callEditTask = async (id) => {
 }
 
 const deleteTask = async () => {
-    await fetch(`http://localhost:3000/tasks/${trashTask}`, {
+    await fetch(`https://app-project-modulo-arnia.herokuapp.com/tasks/${trashTask}`, {
         method: 'DELETE',
     })
     showDeleteModal()

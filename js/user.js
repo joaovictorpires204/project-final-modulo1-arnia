@@ -159,7 +159,7 @@ const checkPassword = () => {
 }
 
 const addUser = async (user) => {
-    await fetch('http://localhost:3000/users', {
+    await fetch('https://app-project-modulo-arnia.herokuapp.com/users', {
         method: 'POST',
         headers: {
             'Accept': 'application/json, text/plain, */*',

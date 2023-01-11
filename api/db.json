@@ -29,6 +29,18 @@
       "email": "joaovictor@gmail.com",
       "password": "1234567890",
       "id": 5
+    },
+    {
+      "name": "Mauricio",
+      "email": "mauricio@gmail.com",
+      "password": "123456789",
+      "id": 6
+    },
+    {
+      "name": "lucas Barcelos",
+      "email": "lucasbarcelos@gmail.com",
+      "password": "123456789",
+      "id": 7
     }
   ],
   "tasks": [
