@@ -101,18 +101,17 @@ const renderTasks = (tasks) => {
     const tableContent = document.getElementById('tbody-content')
 
     tasks.forEach((task) => {
-        const date = new Date(task.date)
+        const date = new Date(task.date + 'T00:00:00-03:00').toLocaleDateString('pt-BR')
         tableContent.innerHTML = tableContent.innerHTML + `
         <tr>
             <td>${task.number}</td>
             <td>${task.description}</td>
-            <td>${date.toLocaleDateString('pt-BR')}</td>
+            <td>${date}</td>
             <td class="${task.status.replace(" ", "-")}">${task.status}</td>
             <td><i id="table-icons" class="fa-solid fa-pen-to-square" onclick="callEditTask(${task.id})"></i><i id="table-icons"
                 class="fa-solid fa-trash" onclick="showDeleteModal(${task.id})"></i></td>
         </tr>
         `
-        // onclick="deleteTask(${task.id})"
     });
 }
 

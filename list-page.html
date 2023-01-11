@@ -24,7 +24,7 @@
                 <i class="fa-solid fa-ellipsis" onclick="showMenu()"></i>
                 <i class="fa-solid fa-ellipsis-vertical" onclick="hideMenu()"></i>
                 <div id="menu">
-                    <div class="welcome-msg welcome-msg-menu">Bem-Vindo! João,</div>
+                    <div class="welcome-msg welcome-msg-menu">Bem-Vindo!</div>
                     <button type="button" id="add-button" class="add-button add-button-menu"
                         onclick="showModal('addTask'), hideMenu()">&plus;&nbsp;<span>Adicionar
                             nova
@@ -33,14 +33,20 @@
                     <button type="button" id="filter-ongoing" class="filter-button filter-button-menu"
                         onclick="filterOngoing(), hideMenu()">Em
                         andamento</button>
-                    <button type="button" id="finished" class="filter-button filter-button-menu" onclick="hideMenu()">Concluída</button>
-                    <button type="button" id="stopped" class="filter-button filter-button-menu" onclick="hideMenu()">Parada</button>
-                    <button type="button" id="delayed" class="filter-button filter-button-menu" onclick="hideMenu()">Atrasadas</button>
+                    <button type="button" id="finished" class="filter-button filter-button-menu"
+                        onclick="hideMenu()">Concluída</button>
+                    <button type="button" id="stopped" class="filter-button filter-button-menu"
+                        onclick="hideMenu()">Parada</button>
+                    <button type="button" id="delayed" class="filter-button filter-button-menu"
+                        onclick="hideMenu()">Atrasadas</button>
                     <div class="search-placeholder">
                         <form id="search" method="post">
                             <i class="fa-solid fa-magnifying-glass"></i>
                             <input type="search" id="search" name="search" class="search-input" />
                         </form>
+                    </div>
+                    <div class="exit-icon-menu">
+                        <i class="fa-solid fa-right-from-bracket fa-xl" onclick="window.location.href='index.html'"></i>
                     </div>
                 </div>
             </div>
@@ -58,7 +64,7 @@
             <div class="exit-icon">
                 <i class="fa-solid fa-right-from-bracket fa-xl" onclick="window.location.href='index.html'"></i>
             </div>
-            <div class="welcome-msg">Bem-Vindo! João,</div>
+            <div class="welcome-msg">Bem-Vindo!</div>
         </div>
         <div class="container-list-page">
             <div class="header">
