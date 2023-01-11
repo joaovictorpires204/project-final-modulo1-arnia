@@ -1,7 +1,11 @@
+//Dark mode push 
+const body = document.getElementsByName('body')
+
+//Show Menu
+const menu = document.querySelector('.menu')
+
 //Modal push
 const modal = document.getElementById('modal')
-const actionTitle = document.getElementById('action-title')
-const cancelButton = document.getElementById('cancel-button')
 const modalDelete = document.getElementById('modal-trash')
 
 // Form list to do push
@@ -11,6 +15,8 @@ const descriptionInput = document.getElementById('description')
 const dateInput = document.getElementById('date')
 const statusInput = document.getElementById('status')
 const submit = document.getElementById('submit-button')
+const deleteTaskButton = document.getElementById('delete-task-button"')
+let trashTask = 0
 let tasks = []
 let actualTask = null
 
@@ -19,12 +25,29 @@ const finished = document.getElementById('finished')
 
 //Dark mode
 const darkMode = () => {
-    document.getElementsByName('body').classList.toggle('active')
+    document.body.classList.toggle('active')
     document.getElementById('icon-mode').classList.toggle('active')
-    document.getElementById('card-content').classList.toggle('active')
-    passwordUser.classList.toggle('active')
-    document.getElementById('login-icon').classList.toggle('active')
+    document.getElementById('table-list').classList.toggle('table-dark')
+    document.getElementById('table-list').classList.toggle('active')
+    document.getElementsByTagName('tr').classList.toggle('active')
+    document.getElementsByTagName('td').classList.toggle('active')
 }
+
+//Menu
+const showMenu = () => {
+    document.getElementById('dark-box-2').style.width = '210px'
+    document.getElementById('menu').style.visibility = 'visible'
+    document.querySelector('.fa-ellipsis').style.visibility = 'hidden'
+    document.querySelector('.fa-ellipsis-vertical').style.visibility = 'visible'
+}
+
+const hideMenu = () => {
+    document.getElementById('dark-box-2').style.width = '40px'
+    document.getElementById('menu').style.visibility = 'hidden'
+    document.querySelector('.fa-ellipsis').style.visibility = 'visible'
+    document.querySelector('.fa-ellipsis-vertical').style.visibility = 'hidden'
+}
+
 
 //Modal 
 const showModal = () => {
@@ -42,8 +65,10 @@ window.addEventListener('click', (event) => {
     }
 })
 
-const showDeleteModal = () =>{
+const showDeleteModal = (id) => {
     modalDelete.style.display = 'block'
+    trashTask = id
+    console.log('Trashtask é', trashTask)
 }
 
 // Form list to do 
@@ -81,10 +106,10 @@ const renderTasks = (tasks) => {
         <tr>
             <td>${task.number}</td>
             <td>${task.description}</td>
-            <td>${date.toLocaleDateString("pt-BR")}</td>
-            <td class="${task.status.replace(" ","-")}">${task.status}</td>
+            <td>${date.toLocaleDateString('pt-BR')}</td>
+            <td class="${task.status.replace(" ", "-")}">${task.status}</td>
             <td><i id="table-icons" class="fa-solid fa-pen-to-square" onclick="callEditTask(${task.id})"></i><i id="table-icons"
-                class="fa-solid fa-trash" onclick="showDeleteModal()"></i></td>
+                class="fa-solid fa-trash" onclick="showDeleteModal(${task.id})"></i></td>
         </tr>
         `
         // onclick="deleteTask(${task.id})"
@@ -112,7 +137,8 @@ const addTask = async (task) => {
         },
         body: JSON.stringify(task)
     });
-    location.reload()
+    location.reload
+
     closeModal()
     cleanFormInput()
 }
@@ -138,13 +164,13 @@ const callEditTask = async (id) => {
     showModal()
 }
 
-const deleteTask = async (id) => {
-    await fetch(`http://localhost:3000/tasks/${id}`, {
+const deleteTask = async () => {
+    await fetch(`http://localhost:3000/tasks/${trashTask}`, {
         method: 'DELETE',
     })
     showDeleteModal()
-    getTasks()
-    location.reload()
+    closeModal()
+    trashTask = 0
 }
 
 const saveTask = async (task) => {
@@ -154,12 +180,10 @@ const saveTask = async (task) => {
         await editTask(actualTask.id, task)
         actualTask = null
     }
-    location.reload()
-    cleanFormInput()
     closeModal()
+    cleanFormInput()
     getTasks()
-}    
-
+}
 
 listForm.addEventListener('submit', (event) => {
     event.preventDefault()

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -23,7 +23,7 @@
         <div id="light-box-1">&nbsp;</div>
         <div id="polygon">&nbsp;</div>
     </div>
-    <div id="icon-toggle">
+    <div id="icon-toggle" onclick="window.location.href='list-page.html'">
         <i id="icon-mode" class="fa-solid fa-toggle-off fa-3x" onclick="darkMode()"></i>
         <i id="icon-moon" class="fa fa-moon fa-sm"></i>
         <i id="icon-sun" class="fa fa-sun fa-xs"></i>
@@ -39,21 +39,27 @@
             <div class="profile-circle">
                 <i class="fa-solid fa-user fa-4x"></i>
             </div>
-            <form id="login" method="post" >
+            <form id="login" method="post" autocomplete="off">
                 <section class="login-field">
                     <label for="email">E-mail</label>
-                    <input type="email" name="email" id="email-login" class="input-login" required>
+                    <input type="email" name="email" id="email-login" class="input-login">
+                    <!-- <i id="check-input" class="fa-solid fa-circle-check"></i>
+                    <i id="exclamation-input" class="fa-solid fa-circle-exclamation"></i>
+                    <span class="span-validation">Usuário não encontrado!!</span> -->
                 </section>
                 <section class="login-field">
                     <div>
                         <label for="pasword">Senha</label>
-                        <input type="password" name="pasword" id="password" class="input-login" required>
+                        <input type="password" name="pasword" id="password" class="input-login">
                         <i class="fa-regular fa-eye-slash" id="eye" onclick="changeEye()"></i>
+                        <!-- <i id="check-input" class="fa-solid fa-circle-check"></i>
+                        <i id="exclamation-input" class="fa-solid fa-circle-exclamation"></i>
+                        <span class="span-validation">Usuário não encontrado!!</span> -->
                     </div>
                 </section>
                 <section>
-                    <button type="submit" class="login-button" onclick="window.location.href='list-page.html'">Entrar</button>
-                </section><!--  -->
+                    <button type="submit" class="login-button">Entrar</button>
+                </section><!--onclick="window.location.href='list-page.html'" -->
             </form>
             <div class="login-card-footer">
                 <button type="button" class="signup-button" onclick="showModalSignup()">Cadastrar</button>
@@ -66,27 +72,37 @@
             <div class="profile-circle">
                 <i class="fa-solid fa-user fa-4x"></i>
             </div>
-            
-            <form id="signup" method="post" class="signup-form">
+            <form id="signup" method="post" class="signup-form" novalidate autocomplete="off">
                 <section class="signup-field">
                     <label for="fullname">Nome Completo</label>
-                    <input type="text" name="name" id="name" class="input-signup">
+                    <input type="text" name="fullname" id="fullname" class="input-signup" oninput="checkName()">
+                    <i id="check-input" class="fa-solid fa-circle-check"></i>
+                    <i id="exclamation-input" class="fa-solid fa-circle-exclamation"></i>
+                    <span class="span-validation">Por favor digite seu nome completo!</span>
                 </section>
                 <section class="signup-field">
-                    <label for="email">E-mail</label>
-                    <input type="email" name="email" id="email-signup" class="input-signup">
+                    <label for="email-signup">E-mail</label>
+                    <input type="email" name="email-signup" id="email-signup" class="input-signup"
+                        oninput="checkEmail()">
+                    <i id="check-input" class="fa-solid fa-circle-check"></i>
+                    <i id="exclamation-input" class="fa-solid fa-circle-exclamation"></i>
+                    <span class="span-validation email-validation">Por favor digite um e-mail valido!</span>
                 </section>
                 <section class="signup-field">
                     <label for="password-signup">Senha</label>
-                    <input type="text" name="password-signup" id="password-signup" class="input-signup">
+                    <input type="text" name="password-signup" id="password-signup" class="input-signup"
+                        oninput="checkPassword()">
+                    <i id="check-input" class="fa-solid fa-circle-check"></i>
+                    <i id="exclamation-input" class="fa-solid fa-circle-exclamation"></i>
+                    <span class="span-validation  password-validation">A senha deve conter ao menos 8 caracteres</span>
                 </section>
-                <section class="signup-field">
+                <section class="card-signup-footer">
+                    <button type="button" class="cancel-signup" onclick="closeModalSignup()">Cancelar</button>
                     <button type="submit" class="submit-signup">Cadastrar</button>
                 </section>
-            <div class="card-signup-footer">
-                <button type="button" class="cancel-signup" onclick="closeModalSignup()">Cancelar</button>
-            </div>
             </form>
+
+
         </div>
 </body>
 

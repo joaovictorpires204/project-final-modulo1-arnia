@@ -1,7 +1,6 @@
-//Dark mode push 
+// //Dark mode push
 const body = document.getElementsByName('body')
 const icon = document.getElementById('icon-mode')
-const card = document.getElementById('card-content')
 const loginIcon = document.getElementById('login-icon')
 
 //Modal push
@@ -17,12 +16,17 @@ const signupForm = document.getElementById('signup')
 const name = document.getElementById('fullname')
 const email = document.getElementById('email-signup')
 const password = document.getElementById('password-signup')
+const signupSections = document.querySelectorAll('.input-signup ')
+const spans = document.querySelectorAll('.span-validation')
+const check = document.querySelectorAll('.fa-circle-check')
+const exclamation = document.querySelectorAll('.fa-circle-exclamation')
+const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+const passwordRegex = /^(?=.*[A-Za-z])(?=.*d)[A-Za-zd]{8,}$/i
 
 //Dark mode
 const darkMode = () => {
     document.body.classList.toggle('active')
     icon.classList.toggle('active')
-    card.classList.toggle('active')
     nameUser.classList.toggle('active')
     passwordUser.classList.toggle('active')
     loginIcon.classList.toggle('active')
@@ -43,14 +47,71 @@ window.addEventListener('click', (event) => {
     }
 })
 
+const cleanSignupInput = () => {
+    document.getElementById('fullname').value = ''
+    document.getElementById('email-signup').value = ''
+    document.getElementById('password-signup').value = ''
+    cleanInput()
+}
+
+const cleanInput = () => {
+    signupSections.style.border = '1px solid #2c2661'
+    check.style.visibility = 'hidden'
+    exclamation.style.visibility = 'hidden'
+
+}
+
+const showError = (index) => {
+    signupSections[index].style.border = '1px solid #EB5757'
+    spans[index].style.display = 'block'
+    exclamation[index].style.visibility = 'visible'
+    check[index].style.visibility = 'hidden'
+}
+
+const showSuccess = (index) => {
+    exclamation[index].style.visibility = 'hidden'
+    signupSections[index].style.border = '1px solid #27AE60'
+    spans[index].style.display = 'none'
+    check[index].style.visibility = 'visible'
+}
+
 //Login
 const changeEye = () => {
     document.getElementById('eye').className = passwordUser.type === 'password' ? 'fa-regular fa-eye' : "fa-regular fa-eye-slash"
     passwordUser.type = passwordUser.type === 'password' ? 'text' : 'password'
 }
 
+//Signup
+const checkName = () => {
+    if (signupSections[0].value.length < 8) {
+        showError(0)
+        return false
+    } else {
+        showSuccess(0)
+        return true
+    }
+}
 
-//Signup 
+const checkEmail = () => {
+    if (!emailRegex.test(signupSections[1].value)) {
+        showError(1)
+        return false
+    } else {
+        showSuccess(1)
+        return true
+    }
+}
+
+const checkPassword = () => {
+    if (signupSections[2].value.length < 8 && !passwordRegex.test[2]) {
+        showError(2)
+        return false
+    } else {
+        showSuccess(2)
+        return true
+    }
+}
+
 const addUser = async (user) => {
     await fetch('http://localhost:3000/users', {
         method: 'POST',
@@ -61,17 +122,26 @@ const addUser = async (user) => {
         body: JSON.stringify(user)
     })
     closeModalSignup()
+    cleanSignupInput()
 }
 
+// loginForm.addEventListener('submit', (event) => {
+//     event.preventDefault()
+
+// })
 
 signupForm.addEventListener('submit', (event) => {
     event.preventDefault()
 
-    const user = signupForm.elements['name'].value
+    const name = signupForm.elements['fullname'].value
     const email = signupForm.elements['email-signup'].value
     const password = signupForm.elements['password-signup'].value
 
-
-    console.log(user, password, email)
-    addUser({ user, password, email })
+    if (checkName() || checkEmail() || checkPassword()) {
+        console.log(name, email, password)
+        addUser({ name, email, password })
+    }
 })
+
+
+

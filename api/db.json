@@ -1,28 +1,10 @@
 {
   "users": [
     {
-      "user": "João Victor Pires de Andrade",
+      "name": "Joao Victor",
+      "email": "joaovictor@gmail.com",
       "password": "123456789",
-      "email": "joaovictorpires204@gmail.com",
       "id": 1
-    },
-    {
-      "user": "Luana",
-      "password": "12345678",
-      "email": "luana@gmail.com",
-      "id": 2
-    },
-    {
-      "user": "",
-      "password": "",
-      "email": "",
-      "id": 3
-    },
-    {
-      "user": "João Victor Pires de Andrade",
-      "password": "123489",
-      "email": "joaovictorpires204@gmail.com",
-      "id": 4
     }
   ],
   "tasks": [
@@ -34,60 +16,60 @@
       "id": 2
     },
     {
-      "number": "3",
-      "description": "Teste 3",
-      "date": "2022-12-15",
-      "status": "Pausada",
-      "id": 3
-    },
-    {
       "number": "4",
       "description": "Teste 4",
-      "date": "2022-12-29",
-      "status": "Em andamento",
+      "date": "2022-12-15",
+      "status": "Pausada",
       "id": 4
     },
     {
       "number": "5",
       "description": "Teste 5",
-      "date": "2022-12-23",
+      "date": "2022-12-29",
       "status": "Em andamento",
       "id": 5
     },
     {
       "number": "6",
       "description": "Teste 6",
-      "date": "2022-12-22",
-      "status": "Em andamento",
+      "date": "2022-12-29",
+      "status": "Concluida",
       "id": 6
     },
     {
       "number": "7",
       "description": "Teste 7",
-      "date": "2022-12-21",
-      "status": "Pausada",
+      "date": "2022-12-30",
+      "status": "Concluida",
       "id": 7
     },
     {
       "number": "8",
       "description": "Teste 8",
-      "date": "2022-12-29",
-      "status": "Concluida",
+      "date": "2023-01-07",
+      "status": "Em andamento",
       "id": 8
     },
     {
       "number": "9",
       "description": "Teste 9",
-      "date": "2023-01-05",
-      "status": "Pausada",
+      "date": "2023-01-07",
+      "status": "Concluida",
       "id": 9
     },
     {
       "number": "10",
-      "description": "Teste 1123",
-      "date": "2023-01-11",
+      "description": "Teste 10",
+      "date": "2023-02-02",
       "status": "Concluida",
       "id": 10
+    },
+    {
+      "number": "11",
+      "description": "Teste 11",
+      "date": "2023-01-18",
+      "status": "Concluida",
+      "id": 11
     }
   ]
 }
