@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500&display=swap');
 
-/*Pattern for allthe pages*/
+/*------------------------------- Pattern for allthe pages ---------------------------------*/
 :root {
     --primary-color: #68519D;
     --secondary-color: #F8B04E;
@@ -14,27 +14,22 @@
     --denary--color: #F8B04E;
     --eleventh--color: #EB5757;
 }
-
 body {
+    display: flex;
     background-color: var(--octonary--color);
     font-family: 'Poppins';
-    display: flex;
 }
-
 body.active {
     background-color: var(--senary-color);
 }
-
 .container {
     display: flex;
-    padding: 0;
     margin: 0;
+    padding: 0;
 }
-
 #boxes {
     display: flex;
 }
-
 #polygon {
     position: fixed;
     background-color: var(--secondary-color);
@@ -42,120 +37,103 @@ body.active {
     height: 65vh;
     right: 0px;
     bottom: 0px;
+    z-index: -2;
     clip-path: polygon(0 100%, 0 45%, 45% 0, 100% 0);
     transform: rotate(180deg);
-    z-index: -2;
 }
-
-/*------------------------------------ Dark Mode ----------------------------------*/
-
+/*----------------------------------------- Dark Mode --------------------------------------*/
 #icon-toggle {
-    padding-top: 20px;
     position: absolute;
+    padding-top: 20px;
     right: 15px;
     cursor: pointer;
 }
-
 #icon-mode {
     color: var(--primary-color);
 }
-
 #icon-mode.active {
-    transform: rotate(180deg);
     color: var(--quartenary-color);
+    transform: rotate(180deg);
 }
-
 #icon-moon {
-    color: var(--tertiary-color);
     position: relative;
     right: 27px;
     bottom: 12px;
     z-index: -1;
+    color: var(--tertiary-color);
 }
-
 #icon-sun {
-    color: var(--secondary-color);
     position: relative;
-    z-index: -1;
     right: 62px;
     bottom: 12px;
+    z-index: -1;
+    color: var(--secondary-color);
 }
-
-/*---------------------------------------- Login page ----------------------------------------*/
-
+/*--------------------------------------- Login page ---------------------------------------*/
 #dark-box-1 {
     background-color: var(--primary-color);
     width: 40px;
     height: 100vh;
 }
-
 #light-box-1 {
     background-color: var(--quartenary-color);
     width: 8px;
     height: 100vh;
 }
-
 .content-login {
+    display: flex;
     padding: 50px;
     padding-top: 60px;
-    display: flex;
 }
-
 .login-card {
     background-color: var(--septenary-color);
     width: 350px;
     height: 450px;
-    border: 1px solid var(--octonary--color);
-    border-radius: 10px;
-    margin-top: 50px;
     margin-left: 200px;
-    box-shadow: 0 0 25px 8px rgba(70, 34, 124, 0.497);
+    margin-top: 50px;
     padding: 50px;
     padding-top: 70px;
+    border: 1px solid var(--octonary--color);
+    border-radius: 10px;
+    box-shadow: 0 0 25px 8px rgba(70, 34, 124, 0.497);
 
 }
-
 .profile-circle {
+    position: absolute;
     background-color: var(--septenary-color);
     width: 120px;
     height: 120px;
-    border: 8px solid var(--octonary--color);
-    border-radius: 50%;
-    position: absolute;
     left: 626px;
     top: 48px;
+    border: 8px solid var(--octonary--color);
+    border-radius: 50%;
     box-shadow: 0 0 25px 8px rgba(70, 34, 124, 0.497);
 }
-
 .fa-user {
     position: relative;
     left: 23px;
     top: 15px;
     color: var(--tertiary-color);
 }
-
 .login-field {
     margin-top: 5px;
     color: var(--primary-color);
 }
-
 .input-login {
+    position: relative;
     width: 100%;
     height: 35px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    padding-left: 10px;
     border-style: none;
     border: 1px solid var(--tertiary-color);
     border-radius: 10px;
     color: var(--tertiary-color);
-    margin-top: 5px;
-    margin-bottom: 10px;
-    padding-left: 10px;
-    position: relative;
 }
-
 .input-login:focus {
     outline: 0;
 }
-
 .fa-eye-slash {
     position: relative;
     left: 180px;
@@ -163,7 +141,6 @@ body.active {
     color: var(--tertiary-color);
     cursor: pointer;
 }
-
 .fa-eye {
     position: relative;
     left: 180px;
@@ -171,418 +148,358 @@ body.active {
     color: var(--tertiary-color);
     cursor: pointer;
 }
-
 .fa-circle-check {
     position: relative;
     color: var(--nonary--color);
 }
-
 .fa-circle-exclamation {
     position: relative;
     color: var(--eleventh--color);
 }
-
 .check-input-login {
     visibility: hidden;
     left: 255px;
     top: -40px;
 }
-
 .exclamation-input-login {
     visibility: hidden;
     left: 235px;
     top: -40px;
 }
-
 .span-validation-login {
     position: absolute;
     display: none;
     background-color: var(--octonary--color);
     width: 200px;
     height: 40px;
-    border-radius: 10px;
     padding: 10px;
     left: 850px;
     top: 210px;
+    border-radius: 10px;
     font-size: 13px;
     color: var(--eleventh--color);
     box-shadow: 0 0 10px 2px var(--eleventh--color);
 }
-
 .password-validation-login {
     top: 315px;
 }
-
 .login-button {
     background-color: var(--primary-color);
     width: 150px;
     height: 35px;
+    margin-left: 40px;
+    margin-top: 30px;
     border-style: none;
     border: 1px solid var(--primary-color);
     border-radius: 30px;
     color: var(--octonary--color);
-    margin-top: 30px;
-    margin-left: 40px;
 }
-
 .login-button:hover {
     background-color: var(--septenary-color);
     color: var(--primary-color);
 }
-
 .login-card-footer {
-    margin-top: 50px;
     margin-left: 70px;
+    margin-top: 50px;
 }
-
 .signup-button {
     border: none;
     color: grey;
 }
-
 .signup-button:hover {
     color: rgb(79, 79, 79);
     text-decoration: underline;
 }
-
-/*------------------------------------- Modal Signup ----------------------------------------*/
-
+/*------------------------------------- Modal Signup ---------------------------------------*/
 .modal-signup {
+    position: fixed;
     display: none;
     background-color: rgba(0, 0, 0, 0.4);
-    position: fixed;
     width: 100%;
     height: 100%;
-    padding: 0;
     margin: 0;
+    padding: 0;
 }
-
 #modal-signup-content {
     background-color: var(--septenary-color);
     width: 350px;
     height: 450px;
-    margin-top: 110px;
     margin-left: 515px;
+    margin-top: 110px;
+    padding: 50px;
+    padding-top: 70px;
     border: 1px solid var(--octonary--color);
     border-radius: 10px;
     box-shadow: 0 0 25px 8px rgba(70, 34, 124, 0.497);
-    padding: 50px;
-    padding-top: 70px;
     color: var(--tertiary-color);
 }
-
 .signup-field {
     margin-bottom: 5px;
 }
-
 .input-signup {
     width: 100%;
     height: 35px;
-    border-style: none;
-    border: 1px solid var(--tertiary-color);
-    border-radius: 10px;
-    color: var(--tertiary-color);
     margin-top: 5px;
     padding-left: 10px;
+    border-style: none;
+    border: 1px solid var(--tertiary-color);
     border-color: var(--primary-color);
+    border-radius: 10px;
+    color: var(--tertiary-color);
 }
-
 .input-signup:focus {
     outline: 0;
 }
-
 .check-input {
     visibility: hidden;
     left: 255px;
     top: -30px;
 }
-
 .exclamation-input {
     visibility: hidden;
     left: 235px;
     top: -30px;
 }
-
 .span-validation {
     position: absolute;
     display: none;
     background-color: var(--octonary--color);
     width: 320px;
     height: 40px;
-    border-radius: 10px;
     padding: 10px;
     left: 850px;
     top: 208px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 2px var(--eleventh--color);
     font-size: 13px;
     color: var(--eleventh--color);
-    box-shadow: 0 0 10px 2px var(--eleventh--color);
 }
-
 .email-validation {
     top: 300px;
 }
-
 .password-validation {
     top: 396px;
 }
-
 .card-signup-footer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
-
 .submit-signup,
 .cancel-signup {
     background-color: var(--primary-color);
     width: 100px;
     height: 35px;
+    margin-top: 15px;
     border-style: none;
     border: 1px solid var(--primary-color);
     border-radius: 30px;
-    margin-top: 15px;
     color: var(--octonary--color);
 }
-
 .submit-signup:hover,
 .cancel-signup:hover {
     background-color: var(--septenary-color);
     color: var(--primary-color);
 }
-
-/*------------------------------- The list page -----------------------------------*/
-
+/*------------------------------------ The list page ---------------------------------------*/
 #dark-box-2 {
     background-color: var(--primary-color);
     width: 40px;
     height: 150vh;
 }
-
 #light-box-2 {
     background-color: var(--quartenary-color);
     width: 8px;
     height: 150vh;
 }
-
 .fa-ellipsis,
 .fa-ellipsis-vertical,
 #menu {
     visibility: hidden;
 }
-
 .container-list-page {
     padding: 30px;
     padding-top: 70px;
 }
-
 .exit-section {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
 }
-
 .exit-icon {
-    padding-top: 30px;
     margin-left: 30px;
     margin-top: 22px;
+    padding-top: 30px;
+    transform: rotate(180deg);
     color: var(--primary-color);
     cursor: pointer;
-    transform: rotate(180deg);
 }
-
 .welcome-msg {
     position: absolute;
     width: 200px;
-    top: 25px;
     left: 120px;
+    top: 25px;
     color: var(--tertiary-color);
 }
-
 #logo-title {
     display: flex;
     flex-direction: row;
     align-items: center;
+    margin-left: 15px;
     margin-top: 60px;
     margin-bottom: 10px;
-    margin-left: 15px;
     gap: 14px;
     font-size: 22px;
     font-weight: bolder;
     color: var(--primary-color);
 }
-
 .add-button {
     background-color: var(--octonary--color);
     width: 250px;
     height: 40px;
+    margin-top: 10px;
     border-style: none;
     border: 1px solid var(--primary-color);
     border-radius: 30px;
     color: var(--tertiary-color);
-    margin-top: 10px;
 }
-
 .add-button:hover {
     background-color: var(--primary-color);
     color: #f2f2f2;
 }
-
 .filter-section {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
-
 .filter-button {
     background-color: var(--octonary--color);
     width: 120px;
     height: 35px;
+    margin-top: 80px;
     border: none;
     border: 1px solid var(--primary-color);
     border-radius: 20px;
     font-size: 13px;
     color: var(--primary-color);
-    margin-top: 80px;
 }
-
 .filter-button:hover {
     background-color: var(--primary-color);
     color: var(--octonary--color);
 }
-
 .search-placeholder {
     width: 200px;
     height: 35px;
+    margin-top: 78px;
+    padding-left: 10px;
     border: 1px solid var(--tertiary-color);
     border-radius: 20px;
-    padding-left: 10px;
-    margin-top: 78px;
 }
-
 .fa-magnifying-glass {
     color: var(--primary-color);
 }
-
 .search-input {
     background-color: none;
-    border: none;
     width: 167px;
     height: 33px;
+    border: none;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
     color: var(--primary-color);
 }
-
 .search-input:focus {
     outline: 0;
 }
-
-/*----------------------------------------- Modal ---------------------------------------------*/
-
+/*----------------------------------------- Modal ------------------------------------------*/
 .modal {
-    background-color: rgba(0, 0, 0, 0.4);
     position: fixed;
+    background-color: rgba(0, 0, 0, 0.4);
     width: 100%;
     height: 100%;
-    padding: 0;
     margin: 0;
+    padding: 0;
 }
-
 .modal-form {
     display: none;
 }
-
 .modal-content {
     background-color: var(--octonary--color);
     width: 600px;
     height: 540px;
     margin: 100px auto;
     padding-top: 40px;
-    padding-left: 60px;
     padding-right: 60px;
+    padding-left: 60px;
 }
-
 .card-title {
     font-size: 20px;
     font-weight: bold;
     color: var(--primary-color);
 }
-
 .list-form {
     margin-top: 25px;
     font-size: 14px;
 }
-
 .field {
     display: flex;
     flex-direction: column;
-    gap: 10px;
     margin-top: 10px;
+    gap: 10px;
     color: var(--primary-color);
 }
-
 .list-input {
     width: 100%;
     height: 40px;
+    padding: 10px;
     border-style: none;
     border: 1px solid var(--tertiary-color);
     border-radius: 10px;
-    padding: 10px;
     color: var(--tertiary-color);
 }
-
 .list-input:focus {
     outline: 1;
     outline-color: var(--primary-color);
 }
-
 .date-input {
     width: 200px;
     height: 40px;
+    padding: 10px;
     border-style: none;
     border: 1px solid var(--tertiary-color);
     border-radius: 10px;
-    padding: 10px;
     text-align: center;
     color: var(--tertiary-color);
 }
-
 .date-input:focus {
     outline: 1;
     outline-color: var(--primary-color);
 }
-
 .select {
     width: 200px;
     height: 40px;
+    padding: 10px;
     border-style: none;
     border: 1px solid var(--tertiary-color);
     border-radius: 10px;
     color: var(--tertiary-color);
-    padding: 10px;
 }
-
 .select:focus {
     outline: 1;
     outline-color: var(--primary-color);
 }
-
 .card-footer {
-    margin-top: 65px;
     display: flex;
     justify-content: space-between;
+    margin-top: 65px;
 }
-
 #cancel-button {
     border: none;
     background-color: var(--octonary--color);
     color: gray;
 }
-
 #cancel-button:hover {
     text-decoration: underline;
 }
-
 .submit {
     background-color: var(--octonary--color);
     width: 120px;
@@ -592,42 +509,35 @@ body.active {
     border-radius: 30px;
     color: var(--primary-color);
 }
-
 .submit:enabled {
     background-color: var(--tertiary-color);
     color: white;
 }
-
-/*---------------------------------------- Modal Trash -----------------------------------------w*/
-
+/*-------------------------------------- Modal Trash ---------------------------------------*/
 .modal-trash {
     display: none;
 }
-
 .modal-trash-content {
     background-color: var(--septenary-color);
     width: 450px;
     height: 300px;
     margin: 180px auto;
-    border: 0.5px solid rgba(0, 0, 0, 0.4);
-    border-radius: 10px;
-    padding-top: 40px;
     padding-left: 40px;
     padding-right: 40px;
+    padding-top: 40px;
+    border: 0.5px solid rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
 }
-
 .card-trash-title {
     font-size: 20px;
     text-align: center;
     color: var(--tertiary-color);
 }
-
 .card-trash-footer {
-    margin-top: 40px;
     display: flex;
     justify-content: space-between;
+    margin-top: 40px;
 }
-
 #cancel-task-button,
 #delete-task-button {
     background-color: var(--septenary-color);
@@ -638,102 +548,110 @@ body.active {
     border-radius: 30px;
     color: var(--primary-color);
 }
-
 #cancel-task-button:hover,
 #delete-task-button:hover {
     background-color: var(--primary-color);
     color: var(--octonary--color);
 }
+.arrow-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    gap: 10px;
+    font-size: 13px;
+    color: var(--tertiary-color);
 
-/*--------------------------------------------- Table -----------------------------------------*/
+}
+.arrow-previous {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.arrow-next {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+/*------------------------------------------ Table -----------------------------------------*/
 .table-content {
     width: 950px;
     margin-top: 50px;
 }
-
 table {
     background-color: var(--octonary--color);
     font-size: 15px;
 }
-
 tr,
 td {
     color: var(--tertiary-color) !important;
 }
-
 tr.active,
 td.active {
     color: var(--septenary-color);
 }
-
 #table-icons {
     margin-left: 7px;
 }
-
 .fa-pen-to-square {
     color: var(--tertiary-color);
     cursor: pointer;
 }
-
 .fa-trash {
     color: var(--quartenary-color);
     cursor: pointer;
 }
-
 .Concluida {
     color: var(--nonary--color) !important;
 }
-
 .Em-andamento {
     color: var(--denary--color) !important;
 }
-
 .Pausada {
     color: var(--eleventh--color) !important;
 }
+.fa-sort-down {
+    cursor: pointer;
+}
+.arrow-filter {
+    position: relative;
+    left: 13px;
+    bottom: 2px;
+    cursor: pointer;
+}
 
-/*-------------------------------------- Media query -------------------------------------------*/
+/*-------------------------------------- Media query ---------------------------------------*/
 
 @media screen and (min-width: 320px) and (max-width: 768px) {
-
-
     #icon-toggle {
         left: 300px;
     }
-
     #icon-moon {
-        bottom: 12px;
         left: -25px;
-    }
-
-    #icon-sun {
         bottom: 12px;
-        left: -63px;
     }
-
+    #icon-sun {
+        left: -63px;
+        bottom: 12px;
+    }
     #dark-box-1 {
         background-color: var(--primary-color);
         width: 25px;
         height: 100vh;
     }
-
     #light-box-1 {
         background-color: var(--quartenary-color);
         width: 8px;
         height: 100vh;
     }
-
-    /*----------------------- Login Page ---------------------------------------*/
+    /*---------------------------------- Login Page ----------------------------------------*/
     .content-login {
         padding: 50px;
         padding-top: 30px;
     }
-
     .content-login {
         padding-left: 10px;
         padding-top: 60px;
     }
-
     .login-card {
         position: relative;
         width: 300px;
@@ -741,24 +659,20 @@ td.active {
         margin-top: 150px;
         left: -400px;
     }
-
     .profile-circle {
         width: 120px;
         height: 120px;
         left: 90px;
         top: -60px;
     }
-
     .check-input-login {
         position: relative;
         top: -40px !important;
     }
-
     .exclamation-input-login {
         position: relative;
         top: -40px !important;
     }
-
     .span-validation-login {
         height: 20px;
         padding-left: 10px;
@@ -766,48 +680,39 @@ td.active {
         left: 50px;
         top: 145px;
     }
-
     .password-validation-login {
         top: 248px;
     }
-
     .fa-eye-slash,
     .fa-eye {
         left: 130px;
         top: -37px;
     }
-
     .login-button {
-        margin-top: 10px;
         margin-left: 20px;
+        margin-top: 10px;
     }
-
     .login-card-footer {
-        margin-top: 50px;
         margin-left: 50px;
+        margin-top: 50px;
     }
-
-    /*-------------------------- Modal Signup ------------------------------------*/
-
+    /*------------------------------------ Modal Signup ------------------------------------*/
     #modal-signup-content {
         position: relative;
         width: 300px;
         height: 400px;
         margin-left: 0px;
-        top: 100px;
         left: 60px;
+        top: 100px;
     }
-
     .fa-circle-check {
         left: 205px;
         top: -30px;
     }
-
     .fa-circle-exclamation {
         left: 185px;
         top: -30px;
     }
-
     .span-validation {
         width: 240px;
         height: 20px;
@@ -819,77 +724,62 @@ td.active {
         color: var(--eleventh--color);
         text-align: center;
     }
-
     .email-validation {
         top: 235px;
     }
-
     .password-validation {
         top: 325px;
     }
-
     .submit-signup,
     .cancel-signup {
-        margin-top: 0px;
         margin-right: 30px;
+        margin-top: 0px;
     }
-
-    /*-------------------------------- The list page --------------------------------------*/
-
+    /*--------------------------------- The list page --------------------------------------*/
     #dark-box-2 {
         width: 40px;
     }
-
     .container-list-page {
         padding-left: 10px;
         padding-top: 60px;
     }
-
-
     .fa-ellipsis {
         visibility: visible;
-        color: var(--octonary--color);
         padding: 10px;
+        color: var(--octonary--color);
     }
-
     .fa-ellipsis-vertical {
         position: absolute;
-        top: 10px;
-        left: 10px;
         visibility: hidden;
+        left: 10px;
+        top: 10px;
         color: var(--octonary--color);
     }
-
     .exit-section {
         display: none;
     }
-
     .welcome-msg {
         display: none;
     }
-
     .welcome-msg-menu {
+        display: block;
         margin-top: 20px;
         left: 30px;
-        display: block;
         color: var(--octonary--color);
     }
-
     #menu {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
     }
-
     .add-button,
     .filter-button,
     .search-input {
         display: none;
     }
-
     .add-button-menu {
-        background-color: var(--primary-color);
         display: block;
+        background-color: var(--primary-color);
         width: 218px;
         margin-top: 100px;
         border: none;
@@ -897,73 +787,60 @@ td.active {
         border-radius: 0px;
         color: var(--octonary--color);
     }
-
     .add-button-mene:target {
         background-color: var(--quartenary-color);
         color: var(--senary-color);
     }
-
     .filter-button-menu {
-        background-color: var(--primary-color);
         display: block;
+        background-color: var(--primary-color);
         width: 218px;
         height: 40px;
+        margin-top: 10px;
         border: none;
         border-right: 8px solid var(--quartenary-color);
         border-radius: 0px;
-        margin-top: 10px;
         font-size: 16px;
         color: var(--octonary--color);
     }
-
     .filter-button-menu:hover {
         background-color: var(--quartenary-color);
         color: var(--senary-color);
     }
-
     .search-placeholder {
         display: none;
     }
-
     .exit-icon-menu {
-        color: var(--octonary--color);
-        transform: rotate(180deg);
         position: absolute;
         left: 20px;
         top: 620px;
+        transform: rotate(180deg);
+        color: var(--octonary--color);
         cursor: pointer;
     }
-
-    /*-------------------------------------- Modal --------------------------------------*/
-
+    /*--------------------------------------- Modal ----------------------------------------*/
     .modal-content {
         width: 380px;
         height: 540px;
-        margin-top: 135px;
         margin-left: 20px;
+        margin-top: 135px;
     }
-
     .modal-trash-content {
-        margin-top: 190px;
         margin-left: 70px;
+        margin-top: 190px;
     }
-
-    /*-------------------------------------- Table ---------------------------------------*/
-
+    /*-------------------------------------- Table -----------------------------------------*/
     .table-content {
         position: relative;
-        width: 450px;
+        width: 400px;
+        margin-left: 60px;
         margin-top: 30px;
         right: 60px;
-        z-index: -1;
     }
-
-
     .fa-pen-to-square {
         color: var(--tertiary-color);
         cursor: pointer;
     }
-
     .fa-trash {
         color: var(--quartenary-color);
         cursor: pointer;

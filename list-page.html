@@ -34,7 +34,7 @@
                         onclick="filterOngoing(), hideMenu()">Em
                         andamento</button>
                     <button type="button" id="finished" class="filter-button filter-button-menu"
-                        onclick="hideMenu()">Concluída</button>
+                        onclick="getFinished(),hideMenu()">Concluída</button>
                     <button type="button" id="stopped" class="filter-button filter-button-menu"
                         onclick="hideMenu()">Parada</button>
                     <button type="button" id="delayed" class="filter-button filter-button-menu"
@@ -84,12 +84,12 @@
             </div>
             <div class="filter-section">
                 <div>
-                    <button type="button" id="filter-today" class="filter-button">Hoje</button>
-                    <button type="button" id="filter-ongoing" class="filter-button" onclick="filterOngoing()">Em
+                    <!-- <button type="button" id="filter-today" class="filter-button">Hoje</button> -->
+                    <button type="button" id="filter-ongoing" class="filter-button" onclick="getOnGoing()">Em
                         andamento</button>
-                    <button type="button" id="finished" class="filter-button">Concluída</button>
-                    <button type="button" id="stopped" class="filter-button">Parada</button>
-                    <button type="button" id="delayed" class="filter-button">Atrasadas</button>
+                    <button type="button" id="finished" class="filter-button" onclick="getFinished()">Concluída</button>
+                    <button type="button" id="stopped" class="filter-button" onclick="getStopped()">Parada</button>
+                    <!-- <button type="button" id="delayed" class="filter-button">Atrasadas</button> -->
                 </div>
                 <div class="search-placeholder">
                     <form id="search" method="post">
@@ -98,7 +98,6 @@
                     </form>
                 </div>
             </div>
-
             <div class="table-content">
                 <div class="table-responsive">
                     <table class="table table-striped table-borderless" id="table-list">
@@ -106,7 +105,10 @@
                             <tr>
                                 <th class="col-1">Núm</th>
                                 <th class="col-4">Descrição</th>
-                                <th class="col-3">Data de Entrega</th>
+                                <th class="col-3">Data de Entrega
+                                    <i class="fa-solid fa-sort-up arrow-filter" onclick="getOrderAsc()"></i>
+                                    <i class="fa-solid fa-sort-down" onclick="getOrderDesc()"></i>
+                                </th>
                                 <th class="col-3">Status</th>
                                 <th class="col">Ação</th>
                             </tr>
@@ -116,7 +118,16 @@
                     </table>
                 </div>
             </div>
-
+            <!-- <div class="arrow-footer">
+                <div class="arrow-previous">
+                    <i class="fa-solid fa-chevron-left"></i>
+                    <div class="arrow-content">Anterior</div>
+                </div>
+                <div class="arrow-next">
+                    <div class="arrow-content">Próximo</div>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </div>
+            </div> -->
             <div class="modal modal-form" id="modal">
                 <div class="modal-content">
                     <div class="card-title" id="action-title">

@@ -116,19 +116,19 @@ const renderTasks = (tasks) => {
 }
 
 const getTasks = async () => {
-    const apiResponse = await fetch('https://app-project-modulo-arnia.herokuapp.com/tasks')
+    const apiResponse = await fetch('http://localhost:3000/tasks')
     const tasks = await apiResponse.json()
     renderTasks(tasks)
 }
 
 const getTask = async (id) => {
-    const apiResponse = await fetch(`https://app-project-modulo-arnia.herokuapp.com/tasks/${id}`,)
+    const apiResponse = await fetch(`http://localhost:3000/tasks/${id}`,)
     const task = apiResponse.json()
     return task
 }
 
 const addTask = async (task) => {
-    await fetch('https://app-project-modulo-arnia.herokuapp.com/tasks', {
+    await fetch('http://localhost:3000/tasks', {
         method: "POST",
         headers: {
             'Accept': 'application/json, text/plain, */*',
@@ -143,7 +143,7 @@ const addTask = async (task) => {
 }
 
 const editTask = async (id, task) => {
-    await fetch(`https://app-project-modulo-arnia.herokuapp.com/tasks/${id}`, {
+    await fetch(`http://localhost:3000/tasks/${id}`, {
         method: 'PUT',
         headers: {
             'Accept': 'application/json, text/plain, */*',
@@ -164,7 +164,7 @@ const callEditTask = async (id) => {
 }
 
 const deleteTask = async () => {
-    await fetch(`https://app-project-modulo-arnia.herokuapp.com/tasks/${trashTask}`, {
+    await fetch(`http://localhost:3000/tasks/${trashTask}`, {
         method: 'DELETE',
     })
     showDeleteModal()
@@ -184,6 +184,36 @@ const saveTask = async (task) => {
     getTasks()
 }
 
+const getFinished = async () => {
+    const apiResponseFinished = await fetch(`http://localhost:3000/tasks?status=Concluida`)
+    const finished = await apiResponseFinished.json()
+    renderTasks(finished)
+}
+
+const getOnGoing = async () => {
+    const apiResponseOnGoing = await fetch(`http://localhost:3000/tasks?status=Em andamento`)
+    const onGoing = await apiResponseOnGoing.json()
+    renderTasks(onGoing)
+}
+
+const getStopped = async () => {
+    const apiResponseStopped = await fetch(`http://localhost:3000/tasks?status=Pausada`)
+    const stopped = await apiResponseStopped.json()
+    renderTasks(stopped)
+}
+
+const getOrderAsc = async () =>{
+    const apiResponseAsc = await fetch(`http://localhost:3000/tasks?_sort=date&_order=asc`)
+    const asc = await apiResponseAsc.json()
+    renderTasks(asc)
+}
+
+const getOrderDesc = async () =>{
+    const apiResponseDesc = await fetch(`http://localhost:3000/tasks?_sort=date&_order=desc`)
+    const desc = await apiResponseDesc.json()
+    renderTasks(desc)
+}
+
 listForm.addEventListener('submit', (event) => {
     event.preventDefault()
 
@@ -196,3 +226,6 @@ listForm.addEventListener('submit', (event) => {
     const task = { number, description, date, status }
     saveTask(task)
 })
+
+
+// https://app-project-modulo-arnia.herokuapp.com/tasks
