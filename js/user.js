@@ -101,6 +101,12 @@ const validatePassword = () => {
     }
 }
 
+const userUntracked = (index) => {
+    signupSections[index].style.border = '1px solid #EB5757'
+    spansSignup[index].style.display = 'block'
+    exclamationSignup[index].style.visibility = 'visible'
+    checkSignup[index].style.visibility = 'hidden'
+}
 
 //Signup
 
@@ -174,9 +180,11 @@ loginForm.addEventListener('submit', async (event) => {
     const apiResponse = await fetch(`http://localhost:3000/users?email=${emailUser}&password=${passwordUser}`)
     const user = await apiResponse.json()
     console.log(user)
-    if (user) {
+    if (user.length > 0) {
         window.location.href = 'list-page.html'
-    }else{
+    } else {
+        showErrorLogin(0)
+        showErrorLogin(1)
         return false
     }
 })

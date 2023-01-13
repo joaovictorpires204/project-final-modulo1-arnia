@@ -5,6 +5,12 @@
       "email": "joaovictor@gmail.com",
       "password": "123456789",
       "id": 1
+    },
+    {
+      "name": "Arnia LTDA",
+      "email": "arnialtda@gmail.com",
+      "password": "123456789",
+      "id": 2
     }
   ],
   "tasks": [
