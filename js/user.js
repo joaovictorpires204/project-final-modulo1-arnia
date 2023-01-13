@@ -9,7 +9,7 @@ const modalSignup = document.getElementById('modal-signup')
 //Login push
 const loginForm = document.getElementById('login')
 const emailUser = document.getElementById('email-login')
-const passwordUser = document.getElementById('password')
+const passwordUser = document.getElementById('password-login')
 
 const loginSections = document.querySelectorAll('.input-login')
 const spansLogin = document.querySelectorAll('.span-validation-login')
@@ -81,17 +81,6 @@ const changeEye = () => {
     passwordUser.type = passwordUser.type === 'password' ? 'text' : 'password'
 }
 
-// const getUsers = async (users) => {
-//     const apiResponse = await fetch(`http://localhost:3000/users`)
-//     const users = await apiResponse.json()
-// }
-
-// const getUser = async (email, password) => {
-//     const apiResponse = await fetch(`http://localhost:3000/users/${email}&${password}`)
-//     const user = await apiResponse.json()
-//     return user
-// }
-
 const checkUser = () => {
     if (!emailRegex.test(loginSections[0].value)) {
         showErrorLogin(0)
@@ -159,7 +148,7 @@ const checkPassword = () => {
 }
 
 const addUser = async (user) => {
-    await fetch('https://app-project-modulo-arnia.herokuapp.com/users', {
+    await fetch('http://localhost:3000/users', {
         method: 'POST',
         headers: {
             'Accept': 'application/json, text/plain, */*',
@@ -171,10 +160,28 @@ const addUser = async (user) => {
     cleanSignupInput()
 }
 
-// loginForm.addEventListener('submit', (event) => {
-//     event.preventDefault()
+loginForm.addEventListener('submit', async (event) => {
+    event.preventDefault()
 
-// })
+    const emailUser = loginForm.elements['email-login'].value
+    const passwordUser = loginForm.elements['password-login'].value
+    console.log(checkUser(), validatePassword())
+    if (!checkUser() || !validatePassword()) {
+        console.log(emailUser, passwordUser)
+        return
+    }
+
+    const apiResponse = await fetch(`http://localhost:3000/users?email=${emailUser}&password=${passwordUser}`)
+    const user = await apiResponse.json()
+    console.log(user)
+    if (user) {
+        window.location.href = 'list-page.html'
+    }else{
+        return false
+    }
+})
+
+
 
 signupForm.addEventListener('submit', (event) => {
     event.preventDefault()

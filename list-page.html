@@ -31,12 +31,12 @@
                             tarefa</span></button>
                     <button type="button" id="filter-today" class="filter-button filter-button-menu">Hoje</button>
                     <button type="button" id="filter-ongoing" class="filter-button filter-button-menu"
-                        onclick="filterOngoing(), hideMenu()">Em
+                        onclick="getOnGoing(), hideMenu()">Em
                         andamento</button>
                     <button type="button" id="finished" class="filter-button filter-button-menu"
                         onclick="getFinished(),hideMenu()">Concluída</button>
                     <button type="button" id="stopped" class="filter-button filter-button-menu"
-                        onclick="hideMenu()">Parada</button>
+                        onclick="getStopped(),hideMenu()">Parada</button>
                     <button type="button" id="delayed" class="filter-button filter-button-menu"
                         onclick="hideMenu()">Atrasadas</button>
                     <div class="search-placeholder">
@@ -103,13 +103,19 @@
                     <table class="table table-striped table-borderless" id="table-list">
                         <thead>
                             <tr>
-                                <th class="col-1">Núm</th>
+                                <th class="col-1">Núm
+                                    <i class="fa-solid fa-sort-up arrow-filter" onclick="getOrderNumAsc()"></i>
+                                    <i class="fa-solid fa-sort-down" onclick="getOrderNumDesc()"></i>
+                                </th>
                                 <th class="col-4">Descrição</th>
                                 <th class="col-3">Data de Entrega
-                                    <i class="fa-solid fa-sort-up arrow-filter" onclick="getOrderAsc()"></i>
-                                    <i class="fa-solid fa-sort-down" onclick="getOrderDesc()"></i>
+                                    <i class="fa-solid fa-sort-up arrow-filter" onclick="getOrderDateAsc()"></i>
+                                    <i class="fa-solid fa-sort-down" onclick="getOrderDateDesc()"></i>
                                 </th>
-                                <th class="col-3">Status</th>
+                                <th class="col-3">Status
+                                    <i class="fa-solid fa-sort-up arrow-filter" onclick="getOrderStatusAsc()"></i>
+                                    <i class="fa-solid fa-sort-down" onclick="getOrderStatusDesc()"></i>
+                                </th>
                                 <th class="col">Ação</th>
                             </tr>
                         </thead>

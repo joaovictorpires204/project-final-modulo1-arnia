@@ -99,6 +99,7 @@ const cleanFormInput = () => {
 //api connection
 const renderTasks = (tasks) => {
     const tableContent = document.getElementById('tbody-content')
+    tableContent.innerHTML = ''
 
     tasks.forEach((task) => {
         const date = new Date(task.date + 'T00:00:00-03:00').toLocaleDateString('pt-BR')
@@ -202,16 +203,41 @@ const getStopped = async () => {
     renderTasks(stopped)
 }
 
-const getOrderAsc = async () =>{
-    const apiResponseAsc = await fetch(`http://localhost:3000/tasks?_sort=date&_order=asc`)
-    const asc = await apiResponseAsc.json()
-    renderTasks(asc)
+// Order the table
+const getOrderNumAsc = async () => {
+    const apiResponseNumAsc = await fetch(`http://localhost:3000/tasks?_sort=number&_order=asc`)
+    const numAsc = await apiResponseNumAsc.json()
+    renderTasks(numAsc)
 }
 
-const getOrderDesc = async () =>{
-    const apiResponseDesc = await fetch(`http://localhost:3000/tasks?_sort=date&_order=desc`)
-    const desc = await apiResponseDesc.json()
-    renderTasks(desc)
+const getOrderNumDesc = async () => {
+    const apiResponseNumDesc = await fetch(`http://localhost:3000/tasks?_sort=number&_order=desc`)
+    const numDesc = await apiResponseNumDesc.json()
+    renderTasks(numDesc)
+}
+
+const getOrderDateAsc = async () => {
+    const apiResponseDateAsc = await fetch(`http://localhost:3000/tasks?_sort=date&_order=asc`)
+    const dateAsc = await apiResponseDateAsc.json()
+    renderTasks(dateAsc)
+}
+
+const getOrderDateDesc = async () => {
+    const apiResponseDateDesc = await fetch(`http://localhost:3000/tasks?_sort=date&_order=desc`)
+    const dateDesc = await apiResponseDateDesc.json()
+    renderTasks(dateDesc)
+}
+
+const getOrderStatusAsc = async () => {
+    const apiResponseStatusAsc = await fetch(`http://localhost:3000/tasks?_sort=status&_order=asc`)
+    const statusAsc = await apiResponseStatusAsc.json()
+    renderTasks(statusAsc)
+}
+
+const getOrderStatusDesc = async () => {
+    const apiResponseStatusDesc = await fetch(`http://localhost:3000/tasks?_sort=status&_order=desc`)
+    const statusDesc = await apiResponseStatusDesc.json()
+    renderTasks(statusDesc)
 }
 
 listForm.addEventListener('submit', (event) => {
