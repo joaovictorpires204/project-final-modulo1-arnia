@@ -77,9 +77,7 @@
                 </div>
                 <div>
                     <button type="button" id="add-button" class="add-button"
-                        onclick="showModal('addTask')">&plus;&nbsp;<span>Adicionar
-                            nova
-                            tarefa</span></button>
+                        onclick="showModal('addTask')">&plus;&nbsp;<span>Adicionar nova tarefa</span></button>
                 </div>
             </div>
             <div class="filter-section">
@@ -92,9 +90,9 @@
                     <!-- <button type="button" id="delayed" class="filter-button">Atrasadas</button> -->
                 </div>
                 <div class="search-placeholder">
-                    <form id="search" method="post">
+                    <form id="search-form" method="post">
                         <i class="fa-solid fa-magnifying-glass"></i>
-                        <input type="search" id="search" name="search" class="search-input" />
+                        <input type="search" id="search" name="search" class="search-input" onload="getSearch()"/>
                     </form>
                 </div>
             </div>

@@ -21,7 +21,7 @@ let tasks = []
 let actualTask = null
 
 //Filter push
-const finished = document.getElementById('finished')
+const search = document.getElementById('search')
 
 //Dark mode
 const darkMode = () => {
@@ -117,34 +117,34 @@ const renderTasks = (tasks) => {
 }
 
 const getTasks = async () => {
-    const apiResponse = await fetch('http://localhost:3000/tasks')
+    const apiResponse = await fetch('to-do-backend-railway-production.up.railway.app/tasks')
     const tasks = await apiResponse.json()
     renderTasks(tasks)
 }
 
 const getTask = async (id) => {
-    const apiResponse = await fetch(`http://localhost:3000/tasks/${id}`,)
+    const apiResponse = await fetch(`to-do-backend-railway-production.up.railway.app/tasks/${id}`,)
     const task = apiResponse.json()
     return task
 }
 
 const addTask = async (task) => {
-    await fetch('http://localhost:3000/tasks', {
+    await fetch('to-do-backend-railway-production.up.railway.app/tasks', {
         method: "POST",
         headers: {
             'Accept': 'application/json, text/plain, */*',
             'Content-Type': 'application/json'
+            
         },
         body: JSON.stringify(task)
     });
     location.reload
-
     closeModal()
     cleanFormInput()
 }
 
 const editTask = async (id, task) => {
-    await fetch(`http://localhost:3000/tasks/${id}`, {
+    await fetch(`to-do-backend-railway-production.up.railway.app/tasks/${id}`, {
         method: 'PUT',
         headers: {
             'Accept': 'application/json, text/plain, */*',
@@ -156,6 +156,7 @@ const editTask = async (id, task) => {
 
 const callEditTask = async (id) => {
     actualTask = await getTask(id)
+    document.getElementById('action-title').innerHTML = 'Editar Tarefa'
     document.getElementById('number').value = actualTask.number
     document.getElementById('description').value = actualTask.description
     document.getElementById('date').value = actualTask.date
@@ -165,7 +166,7 @@ const callEditTask = async (id) => {
 }
 
 const deleteTask = async () => {
-    await fetch(`http://localhost:3000/tasks/${trashTask}`, {
+    await fetch(`to-do-backend-railway-production.up.railway.app/tasks/${trashTask}`, {
         method: 'DELETE',
     })
     showDeleteModal()
@@ -186,56 +187,62 @@ const saveTask = async (task) => {
 }
 
 const getFinished = async () => {
-    const apiResponseFinished = await fetch(`http://localhost:3000/tasks?status=Concluida`)
+    const apiResponseFinished = await fetch(`to-do-backend-railway-production.up.railway.app/tasks?status=Concluida`)
     const finished = await apiResponseFinished.json()
     renderTasks(finished)
 }
 
 const getOnGoing = async () => {
-    const apiResponseOnGoing = await fetch(`http://localhost:3000/tasks?status=Em andamento`)
+    const apiResponseOnGoing = await fetch(`to-do-backend-railway-production.up.railway.app/tasks?status=Em andamento`)
     const onGoing = await apiResponseOnGoing.json()
     renderTasks(onGoing)
 }
 
 const getStopped = async () => {
-    const apiResponseStopped = await fetch(`http://localhost:3000/tasks?status=Pausada`)
+    const apiResponseStopped = await fetch(`to-do-backend-railway-production.up.railway.app/tasks?status=Pausada`)
     const stopped = await apiResponseStopped.json()
     renderTasks(stopped)
 }
 
+const getSearch = async () =>{
+    const apiResponseSearch = await fetch(`to-do-backend-railway-production.up.railway.app/tasks?description=${search}`)
+    const wanted =  await apiResponseSearch.json()
+    renderTasks(wanted)
+}
+
 // Order the table
 const getOrderNumAsc = async () => {
-    const apiResponseNumAsc = await fetch(`http://localhost:3000/tasks?_sort=number&_order=asc`)
+    const apiResponseNumAsc = await fetch(`to-do-backend-railway-production.up.railway.app/tasks?_sort=number&_order=asc`)
     const numAsc = await apiResponseNumAsc.json()
     renderTasks(numAsc)
 }
 
 const getOrderNumDesc = async () => {
-    const apiResponseNumDesc = await fetch(`http://localhost:3000/tasks?_sort=number&_order=desc`)
+    const apiResponseNumDesc = await fetch(`to-do-backend-railway-production.up.railway.app/tasks?_sort=number&_order=desc`)
     const numDesc = await apiResponseNumDesc.json()
     renderTasks(numDesc)
 }
 
 const getOrderDateAsc = async () => {
-    const apiResponseDateAsc = await fetch(`http://localhost:3000/tasks?_sort=date&_order=asc`)
+    const apiResponseDateAsc = await fetch(`to-do-backend-railway-production.up.railway.app/tasks?_sort=date&_order=asc`)
     const dateAsc = await apiResponseDateAsc.json()
     renderTasks(dateAsc)
 }
 
 const getOrderDateDesc = async () => {
-    const apiResponseDateDesc = await fetch(`http://localhost:3000/tasks?_sort=date&_order=desc`)
+    const apiResponseDateDesc = await fetch(`to-do-backend-railway-production.up.railway.app/tasks?_sort=date&_order=desc`)
     const dateDesc = await apiResponseDateDesc.json()
     renderTasks(dateDesc)
 }
 
 const getOrderStatusAsc = async () => {
-    const apiResponseStatusAsc = await fetch(`http://localhost:3000/tasks?_sort=status&_order=asc`)
+    const apiResponseStatusAsc = await fetch(`to-do-backend-railway-production.up.railway.app/tasks?_sort=status&_order=asc`)
     const statusAsc = await apiResponseStatusAsc.json()
     renderTasks(statusAsc)
 }
 
 const getOrderStatusDesc = async () => {
-    const apiResponseStatusDesc = await fetch(`http://localhost:3000/tasks?_sort=status&_order=desc`)
+    const apiResponseStatusDesc = await fetch(`to-do-backend-railway-production.up.railway.app/tasks?_sort=status&_order=desc`)
     const statusDesc = await apiResponseStatusDesc.json()
     renderTasks(statusDesc)
 }

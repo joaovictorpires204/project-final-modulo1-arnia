@@ -367,6 +367,9 @@ body.active {
     background-color: var(--primary-color);
     color: #f2f2f2;
 }
+.add-button.active{
+    background-color: var(--denary--color);
+}
 .filter-section {
     display: flex;
     flex-direction: row;
