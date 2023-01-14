@@ -154,7 +154,7 @@ const checkPassword = () => {
 }
 
 const addUser = async (user) => {
-    await fetch('to-do-backend-railway-production.up.railway.app/users', {
+    await fetch('https://to-do-backend-railway-production.up.railway.app/users', {
         method: 'POST',
         headers: {
             'Accept': 'application/json, text/plain, */*',
@@ -177,7 +177,7 @@ loginForm.addEventListener('submit', async (event) => {
         return
     }
 
-    const apiResponse = await fetch(`to-do-backend-railway-production.up.railway.app/users?email=${emailUser}&password=${passwordUser}`)
+    const apiResponse = await fetch(`https://to-do-backend-railway-production.up.railway.app/users?email=${emailUser}&password=${passwordUser}`)
     const user = await apiResponse.json()
     console.log(user)
     if (user.length > 0) {
