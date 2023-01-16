@@ -23,10 +23,12 @@
         <div id="light-box-1">&nbsp;</div>
         <div id="polygon">&nbsp;</div>
     </div>
-    <div id="icon-toggle" onclick="window.location.href='list-page.html'">
+    <div id="icon-toggle">
         <i id="icon-mode" class="fa-solid fa-toggle-off fa-3x" onclick="darkMode()"></i>
-        <i id="icon-moon" class="fa fa-moon fa-sm"></i>
-        <i id="icon-sun" class="fa fa-sun fa-xs"></i>
+        <div class="sun-and-moon">
+            <i id="icon-sun" class="fa fa-sun fa-xs"></i>
+            <i id="icon-moon" class="fa fa-moon fa-sm"></i>
+        </div>
     </div>
     <!--  -->
     <div class="content-login">
@@ -50,7 +52,8 @@
                 <section class="login-field">
                     <div>
                         <label for="pasword">Senha</label>
-                        <input type="password" name="pasword" id="password-login" class="input-login" oninput="validatePassword()"> 
+                        <input type="password" name="pasword" id="password-login" class="input-login"
+                            oninput="validatePassword()">
                         <i class="fa-solid fa-circle-check check-input-login"></i>
                         <i class="fa-solid fa-circle-exclamation exclamation-input-login"></i>
                         <i class="fa-regular fa-eye-slash" id="eye" onclick="changeEye()"></i>

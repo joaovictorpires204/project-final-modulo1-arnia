@@ -20,17 +20,22 @@ let trashTask = 0
 let tasks = []
 let actualTask = null
 
-//Filter push
-const search = document.getElementById('search')
-
 //Dark mode
 const darkMode = () => {
     document.body.classList.toggle('active')
     document.getElementById('icon-mode').classList.toggle('active')
-    document.getElementById('table-list').classList.toggle('table-dark')
-    document.getElementById('table-list').classList.toggle('active')
-    document.getElementsByTagName('tr').classList.toggle('active')
-    document.getElementsByTagName('td').classList.toggle('active')
+    document.getElementById('welcome-msg').classList.toggle('active')
+    document.getElementById('logo-title').classList.toggle('active')
+    document.querySelector('.dark-btn-1').classList.toggle('button-dark')
+    document.querySelector('.dark-btn-2').classList.toggle('button-dark')
+    document.querySelector('.dark-btn-3').classList.toggle('button-dark')
+    document.querySelector('.dark-btn-4').classList.toggle('button-dark')
+    document.querySelector('.dark-btn-5').classList.toggle('button-dark')
+    document.querySelector('.dark-1').classList.toggle('table-dark')
+    document.querySelector('.dark-2').classList.toggle('table-dark')
+    document.querySelector('.dark-3').classList.toggle('table-dark')
+    document.querySelector('.dark-4').classList.toggle('table-dark')
+    document.querySelector('.dark-5').classList.toggle('table-dark')
 }
 
 //Menu
@@ -47,7 +52,6 @@ const hideMenu = () => {
     document.querySelector('.fa-ellipsis').style.visibility = 'visible'
     document.querySelector('.fa-ellipsis-vertical').style.visibility = 'hidden'
 }
-
 
 //Modal 
 const showModal = () => {
@@ -96,7 +100,7 @@ const cleanFormInput = () => {
     document.getElementById('status').value = ''
 }
 
-//api connection
+//Api connection
 const renderTasks = (tasks) => {
     const tableContent = document.getElementById('tbody-content')
     tableContent.innerHTML = ''
@@ -134,7 +138,7 @@ const addTask = async (task) => {
         headers: {
             'Accept': 'application/json, text/plain, */*',
             'Content-Type': 'application/json'
-            
+
         },
         body: JSON.stringify(task)
     });
@@ -186,6 +190,14 @@ const saveTask = async (task) => {
     getTasks()
 }
 
+
+// Filter
+const getAll = async () => {
+    const apiResponseAll = await fetch(`https://to-do-backend-railway-production.up.railway.app/tasks`)
+    const all = await apiResponseAll.json()
+    renderTasks(all)
+}
+
 const getFinished = async () => {
     const apiResponseFinished = await fetch(`https://to-do-backend-railway-production.up.railway.app/tasks?status=Concluida`)
     const finished = await apiResponseFinished.json()
@@ -204,13 +216,6 @@ const getStopped = async () => {
     renderTasks(stopped)
 }
 
-const getSearch = async () =>{
-    const apiResponseSearch = await fetch(`https://to-do-backend-railway-production.up.railway.app/tasks?description=${search}`)
-    const wanted =  await apiResponseSearch.json()
-    renderTasks(wanted)
-}
-
-// Order the table
 const getOrderNumAsc = async () => {
     const apiResponseNumAsc = await fetch(`https://to-do-backend-railway-production.up.railway.app/tasks?_sort=number&_order=asc`)
     const numAsc = await apiResponseNumAsc.json()
@@ -221,6 +226,18 @@ const getOrderNumDesc = async () => {
     const apiResponseNumDesc = await fetch(`https://to-do-backend-railway-production.up.railway.app/tasks?_sort=number&_order=desc`)
     const numDesc = await apiResponseNumDesc.json()
     renderTasks(numDesc)
+}
+
+const getOrderDescripAsc = async () => {
+    const apiResponseDescpAsc = await fetch(`https://to-do-backend-railway-production.up.railway.app/tasks?_sort=description&_order=asc`)
+    const descripAsc = await apiResponseDescpAsc.json()
+    renderTasks(descripAsc)
+}
+
+const getOrderDescripDesc = async () => {
+    const apiResponseDescpDesc = await fetch(`https://to-do-backend-railway-production.up.railway.app/tasks?_sort=description&_order=desc`)
+    const descripDesc = await apiResponseDescpDesc.json()
+    renderTasks(descripDesc)
 }
 
 const getOrderDateAsc = async () => {
@@ -247,6 +264,8 @@ const getOrderStatusDesc = async () => {
     renderTasks(statusDesc)
 }
 
+
+
 listForm.addEventListener('submit', (event) => {
     event.preventDefault()
 
@@ -261,4 +280,4 @@ listForm.addEventListener('submit', (event) => {
 })
 
 
-// https://app-project-modulo-arnia.herokuapp.com/tasks
+// https://to-do-backend-railway-production.up.railway.app/

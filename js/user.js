@@ -34,9 +34,6 @@ const passwordRegex = /^(?=.*[A-Za-z])(?=.*d)[A-Za-zd]{8,}$/i
 const darkMode = () => {
     document.body.classList.toggle('active')
     icon.classList.toggle('active')
-    nameUser.classList.toggle('active')
-    passwordUser.classList.toggle('active')
-    loginIcon.classList.toggle('active')
 }
 
 //Modal
@@ -58,7 +55,7 @@ const cleanSignupInput = () => {
     document.getElementById('fullname').value = ''
     document.getElementById('email-signup').value = ''
     document.getElementById('password-signup').value = ''
-    cleanInput()
+    location.reload()
 }
 
 const showErrorLogin = (index) => {

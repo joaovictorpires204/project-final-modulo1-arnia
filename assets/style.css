@@ -14,22 +14,27 @@
     --denary--color: #F8B04E;
     --eleventh--color: #EB5757;
 }
+
 body {
     display: flex;
     background-color: var(--octonary--color);
     font-family: 'Poppins';
 }
+
 body.active {
     background-color: var(--senary-color);
 }
+
 .container {
     display: flex;
     margin: 0;
     padding: 0;
 }
+
 #boxes {
     display: flex;
 }
+
 #polygon {
     position: fixed;
     background-color: var(--secondary-color);
@@ -41,6 +46,7 @@ body.active {
     clip-path: polygon(0 100%, 0 45%, 45% 0, 100% 0);
     transform: rotate(180deg);
 }
+
 /*----------------------------------------- Dark Mode --------------------------------------*/
 #icon-toggle {
     position: absolute;
@@ -48,43 +54,53 @@ body.active {
     right: 15px;
     cursor: pointer;
 }
+
 #icon-mode {
     color: var(--primary-color);
 }
+
 #icon-mode.active {
     color: var(--quartenary-color);
     transform: rotate(180deg);
 }
+
+.sun-and-moon {
+    display: flex;
+    align-items: center;
+    margin-top: -25px;
+    gap: 10px;
+}
+
 #icon-moon {
-    position: relative;
-    right: 27px;
-    bottom: 12px;
     z-index: -1;
     color: var(--tertiary-color);
 }
+
 #icon-sun {
-    position: relative;
-    right: 62px;
-    bottom: 12px;
+    margin-left: 10px;
     z-index: -1;
     color: var(--secondary-color);
 }
+
 /*--------------------------------------- Login page ---------------------------------------*/
 #dark-box-1 {
     background-color: var(--primary-color);
     width: 40px;
     height: 100vh;
 }
+
 #light-box-1 {
     background-color: var(--quartenary-color);
     width: 8px;
     height: 100vh;
 }
+
 .content-login {
     display: flex;
     padding: 50px;
     padding-top: 60px;
 }
+
 .login-card {
     background-color: var(--septenary-color);
     width: 350px;
@@ -98,6 +114,7 @@ body.active {
     box-shadow: 0 0 25px 8px rgba(70, 34, 124, 0.497);
 
 }
+
 .profile-circle {
     position: absolute;
     background-color: var(--septenary-color);
@@ -109,16 +126,19 @@ body.active {
     border-radius: 50%;
     box-shadow: 0 0 25px 8px rgba(70, 34, 124, 0.497);
 }
+
 .fa-user {
     position: relative;
     left: 23px;
     top: 15px;
     color: var(--tertiary-color);
 }
+
 .login-field {
     margin-top: 5px;
-    color: var(--primary-color);
+    color: var(--tertiary-color);
 }
+
 .input-login {
     position: relative;
     width: 100%;
@@ -131,9 +151,11 @@ body.active {
     border-radius: 10px;
     color: var(--tertiary-color);
 }
+
 .input-login:focus {
     outline: 0;
 }
+
 .fa-eye-slash {
     position: relative;
     left: 180px;
@@ -141,6 +163,7 @@ body.active {
     color: var(--tertiary-color);
     cursor: pointer;
 }
+
 .fa-eye {
     position: relative;
     left: 180px;
@@ -148,24 +171,29 @@ body.active {
     color: var(--tertiary-color);
     cursor: pointer;
 }
+
 .fa-circle-check {
     position: relative;
     color: var(--nonary--color);
 }
+
 .fa-circle-exclamation {
     position: relative;
     color: var(--eleventh--color);
 }
+
 .check-input-login {
     visibility: hidden;
     left: 255px;
     top: -40px;
 }
+
 .exclamation-input-login {
     visibility: hidden;
     left: 235px;
     top: -40px;
 }
+
 .span-validation-login {
     position: absolute;
     display: none;
@@ -180,9 +208,11 @@ body.active {
     color: var(--eleventh--color);
     box-shadow: 0 0 10px 2px var(--eleventh--color);
 }
+
 .password-validation-login {
     top: 315px;
 }
+
 .login-button {
     background-color: var(--primary-color);
     width: 150px;
@@ -194,22 +224,28 @@ body.active {
     border-radius: 30px;
     color: var(--octonary--color);
 }
+
 .login-button:hover {
     background-color: var(--septenary-color);
     color: var(--primary-color);
 }
+
 .login-card-footer {
     margin-left: 70px;
-    margin-top: 50px;
+    margin-top: 40px;
 }
+
 .signup-button {
+    background-color: var(--septenary-color);
     border: none;
     color: grey;
 }
+
 .signup-button:hover {
     color: rgb(79, 79, 79);
     text-decoration: underline;
 }
+
 /*------------------------------------- Modal Signup ---------------------------------------*/
 .modal-signup {
     position: fixed;
@@ -220,6 +256,7 @@ body.active {
     margin: 0;
     padding: 0;
 }
+
 #modal-signup-content {
     background-color: var(--septenary-color);
     width: 350px;
@@ -233,9 +270,11 @@ body.active {
     box-shadow: 0 0 25px 8px rgba(70, 34, 124, 0.497);
     color: var(--tertiary-color);
 }
+
 .signup-field {
     margin-bottom: 5px;
 }
+
 .input-signup {
     width: 100%;
     height: 35px;
@@ -247,19 +286,23 @@ body.active {
     border-radius: 10px;
     color: var(--tertiary-color);
 }
+
 .input-signup:focus {
     outline: 0;
 }
+
 .check-input {
     visibility: hidden;
     left: 255px;
     top: -30px;
 }
+
 .exclamation-input {
     visibility: hidden;
     left: 235px;
     top: -30px;
 }
+
 .span-validation {
     position: absolute;
     display: none;
@@ -274,19 +317,34 @@ body.active {
     font-size: 13px;
     color: var(--eleventh--color);
 }
+
 .email-validation {
     top: 300px;
 }
+
 .password-validation {
     top: 396px;
 }
+
 .card-signup-footer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
-.submit-signup,
+
 .cancel-signup {
+    background-color: var(--septenary-color);
+    margin-top: 15px;
+    border: none;
+    color: grey;
+}
+
+.cancel-signup:hover {
+    color: rgb(79, 79, 79);
+    text-decoration: underline;
+}
+
+.submit-signup {
     background-color: var(--primary-color);
     width: 100px;
     height: 35px;
@@ -294,38 +352,44 @@ body.active {
     border-style: none;
     border: 1px solid var(--primary-color);
     border-radius: 30px;
-    color: var(--octonary--color);
+    color: lightgray;
 }
-.submit-signup:hover,
-.cancel-signup:hover {
+
+.submit-signup:hover {
     background-color: var(--septenary-color);
     color: var(--primary-color);
 }
+
 /*------------------------------------ The list page ---------------------------------------*/
 #dark-box-2 {
     background-color: var(--primary-color);
     width: 40px;
-    height: 150vh;
+    height: 130vh;
 }
+
 #light-box-2 {
     background-color: var(--quartenary-color);
     width: 8px;
-    height: 150vh;
+    height: 130vh;
 }
+
 .fa-ellipsis,
 .fa-ellipsis-vertical,
 #menu {
     visibility: hidden;
 }
+
 .container-list-page {
     padding: 30px;
     padding-top: 70px;
 }
+
 .exit-section {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
 }
+
 .exit-icon {
     margin-left: 30px;
     margin-top: 22px;
@@ -334,85 +398,88 @@ body.active {
     color: var(--primary-color);
     cursor: pointer;
 }
-.welcome-msg {
+
+#welcome-msg {
     position: absolute;
     width: 200px;
     left: 120px;
     top: 25px;
-    color: var(--tertiary-color);
+    color: var(--primary-color);
 }
+
+#welcome-msg.active {
+    color: var(--septenary-color);
+}
+
 #logo-title {
     display: flex;
     flex-direction: row;
     align-items: center;
     margin-left: 15px;
     margin-top: 60px;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
     gap: 14px;
     font-size: 22px;
     font-weight: bolder;
     color: var(--primary-color);
 }
+
+#logo-title.active{
+    color: var(--septenary-color);
+}
+
 .add-button {
     background-color: var(--octonary--color);
     width: 250px;
     height: 40px;
-    margin-top: 10px;
+    margin-top: 20px;
     border-style: none;
     border: 1px solid var(--primary-color);
     border-radius: 30px;
     color: var(--tertiary-color);
 }
+
 .add-button:hover {
     background-color: var(--primary-color);
     color: #f2f2f2;
 }
-.add-button.active{
-    background-color: var(--denary--color);
-}
+
 .filter-section {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: end;
+    margin-top: 20px;
+    gap: 10px;
 }
+
 .filter-button {
     background-color: var(--octonary--color);
     width: 120px;
     height: 35px;
-    margin-top: 80px;
     border: none;
     border: 1px solid var(--primary-color);
     border-radius: 20px;
     font-size: 13px;
     color: var(--primary-color);
 }
+
 .filter-button:hover {
     background-color: var(--primary-color);
     color: var(--octonary--color);
 }
-.search-placeholder {
-    width: 200px;
-    height: 35px;
-    margin-top: 78px;
-    padding-left: 10px;
-    border: 1px solid var(--tertiary-color);
-    border-radius: 20px;
+
+.button-dark{
+    background-color: var(--primary-color);
+    border: 1px solid var(--septenary-color);
+    color: var(--septenary-color);
 }
-.fa-magnifying-glass {
+
+.button-dark:hover{
+    background-color: var(--quartenary-color);
+    border: 1px solid var(--septenary-color);
     color: var(--primary-color);
 }
-.search-input {
-    background-color: none;
-    width: 167px;
-    height: 33px;
-    border: none;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    color: var(--primary-color);
-}
-.search-input:focus {
-    outline: 0;
-}
+
 /*----------------------------------------- Modal ------------------------------------------*/
 .modal {
     position: fixed;
@@ -422,9 +489,11 @@ body.active {
     margin: 0;
     padding: 0;
 }
+
 .modal-form {
     display: none;
 }
+
 .modal-content {
     background-color: var(--octonary--color);
     width: 600px;
@@ -434,15 +503,18 @@ body.active {
     padding-right: 60px;
     padding-left: 60px;
 }
+
 .card-title {
     font-size: 20px;
     font-weight: bold;
     color: var(--primary-color);
 }
+
 .list-form {
     margin-top: 25px;
     font-size: 14px;
 }
+
 .field {
     display: flex;
     flex-direction: column;
@@ -450,6 +522,7 @@ body.active {
     gap: 10px;
     color: var(--primary-color);
 }
+
 .list-input {
     width: 100%;
     height: 40px;
@@ -459,10 +532,12 @@ body.active {
     border-radius: 10px;
     color: var(--tertiary-color);
 }
+
 .list-input:focus {
     outline: 1;
     outline-color: var(--primary-color);
 }
+
 .date-input {
     width: 200px;
     height: 40px;
@@ -473,10 +548,12 @@ body.active {
     text-align: center;
     color: var(--tertiary-color);
 }
+
 .date-input:focus {
     outline: 1;
     outline-color: var(--primary-color);
 }
+
 .select {
     width: 200px;
     height: 40px;
@@ -486,23 +563,28 @@ body.active {
     border-radius: 10px;
     color: var(--tertiary-color);
 }
+
 .select:focus {
     outline: 1;
     outline-color: var(--primary-color);
 }
+
 .card-footer {
     display: flex;
     justify-content: space-between;
     margin-top: 65px;
 }
+
 #cancel-button {
     border: none;
     background-color: var(--octonary--color);
     color: gray;
 }
+
 #cancel-button:hover {
     text-decoration: underline;
 }
+
 .submit {
     background-color: var(--octonary--color);
     width: 120px;
@@ -512,14 +594,17 @@ body.active {
     border-radius: 30px;
     color: var(--primary-color);
 }
+
 .submit:enabled {
     background-color: var(--tertiary-color);
     color: white;
 }
+
 /*-------------------------------------- Modal Trash ---------------------------------------*/
 .modal-trash {
     display: none;
 }
+
 .modal-trash-content {
     background-color: var(--septenary-color);
     width: 450px;
@@ -531,16 +616,19 @@ body.active {
     border: 0.5px solid rgba(0, 0, 0, 0.4);
     border-radius: 10px;
 }
+
 .card-trash-title {
     font-size: 20px;
     text-align: center;
     color: var(--tertiary-color);
 }
+
 .card-trash-footer {
     display: flex;
     justify-content: space-between;
     margin-top: 40px;
 }
+
 #cancel-task-button,
 #delete-task-button {
     background-color: var(--septenary-color);
@@ -551,11 +639,13 @@ body.active {
     border-radius: 30px;
     color: var(--primary-color);
 }
+
 #cancel-task-button:hover,
 #delete-task-button:hover {
     background-color: var(--primary-color);
     color: var(--octonary--color);
 }
+
 .arrow-footer {
     display: flex;
     flex-direction: row;
@@ -565,56 +655,39 @@ body.active {
     color: var(--tertiary-color);
 
 }
+
 .arrow-previous {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
+
 .arrow-next {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
+
 /*------------------------------------------ Table -----------------------------------------*/
 .table-content {
     width: 950px;
     margin-top: 50px;
 }
+
 table {
     background-color: var(--octonary--color);
     font-size: 15px;
 }
+
 tr,
 td {
     color: var(--tertiary-color) !important;
 }
-tr.active,
-td.active {
-    color: var(--septenary-color);
-}
-#table-icons {
-    margin-left: 7px;
-}
-.fa-pen-to-square {
-    color: var(--tertiary-color);
-    cursor: pointer;
-}
-.fa-trash {
-    color: var(--quartenary-color);
-    cursor: pointer;
-}
-.Concluida {
-    color: var(--nonary--color) !important;
-}
-.Em-andamento {
-    color: var(--denary--color) !important;
-}
-.Pausada {
-    color: var(--eleventh--color) !important;
-}
+
 .fa-sort-down {
     cursor: pointer;
 }
+
 .arrow-filter {
     position: relative;
     left: 13px;
@@ -622,39 +695,75 @@ td.active {
     cursor: pointer;
 }
 
+#table-icons {
+    margin-left: 7px;
+}
+
+.fa-pen-to-square {
+    color: var(--tertiary-color);
+    cursor: pointer;
+}
+
+.fa-trash {
+    color: var(--quartenary-color);
+    cursor: pointer;
+}
+
+.Concluida {
+    color: var(--nonary--color) !important;
+}
+
+.Em-andamento {
+    color: var(--denary--color) !important;
+}
+
+.Pausada {
+    color: var(--eleventh--color) !important;
+}
+
 /*-------------------------------------- Media query ---------------------------------------*/
 
 @media screen and (min-width: 320px) and (max-width: 768px) {
-    #icon-toggle {
-        left: 300px;
-    }
-    #icon-moon {
-        left: -25px;
-        bottom: 12px;
-    }
-    #icon-sun {
-        left: -63px;
-        bottom: 12px;
-    }
+
     #dark-box-1 {
         background-color: var(--primary-color);
         width: 25px;
         height: 100vh;
     }
+
     #light-box-1 {
         background-color: var(--quartenary-color);
         width: 8px;
         height: 100vh;
     }
+
+    #icon-toggle {
+        left: 330px;
+    }
+
+    .sun-and-moon {
+        position: relative;
+        right: 8px;
+    }
+
+    #icon-moon {
+        z-index: -1;
+        color: var(--tertiary-color);
+    }
+
+    #icon-sun {
+        margin-left: 20px;
+        z-index: -1;
+        color: var(--secondary-color);
+    }
+
     /*---------------------------------- Login Page ----------------------------------------*/
     .content-login {
         padding: 50px;
-        padding-top: 30px;
-    }
-    .content-login {
-        padding-left: 10px;
+        padding-left: 25px;
         padding-top: 60px;
     }
+
     .login-card {
         position: relative;
         width: 300px;
@@ -662,20 +771,24 @@ td.active {
         margin-top: 150px;
         left: -400px;
     }
+
     .profile-circle {
         width: 120px;
         height: 120px;
         left: 90px;
         top: -60px;
     }
+
     .check-input-login {
         position: relative;
         top: -40px !important;
     }
+
     .exclamation-input-login {
         position: relative;
         top: -40px !important;
     }
+
     .span-validation-login {
         height: 20px;
         padding-left: 10px;
@@ -683,39 +796,47 @@ td.active {
         left: 50px;
         top: 145px;
     }
+
     .password-validation-login {
         top: 248px;
     }
+
     .fa-eye-slash,
     .fa-eye {
         left: 130px;
         top: -37px;
     }
+
     .login-button {
         margin-left: 20px;
         margin-top: 10px;
     }
+
     .login-card-footer {
         margin-left: 50px;
-        margin-top: 50px;
+        margin-top: 30px;
     }
+
     /*------------------------------------ Modal Signup ------------------------------------*/
     #modal-signup-content {
         position: relative;
         width: 300px;
         height: 400px;
         margin-left: 0px;
-        left: 60px;
+        left: 73px;
         top: 100px;
     }
+
     .fa-circle-check {
         left: 205px;
         top: -30px;
     }
+
     .fa-circle-exclamation {
         left: 185px;
         top: -30px;
     }
+
     .span-validation {
         width: 240px;
         height: 20px;
@@ -727,30 +848,41 @@ td.active {
         color: var(--eleventh--color);
         text-align: center;
     }
+
     .email-validation {
         top: 235px;
     }
+
     .password-validation {
         top: 325px;
     }
+
     .submit-signup,
     .cancel-signup {
         margin-right: 30px;
         margin-top: 0px;
     }
+
     /*--------------------------------- The list page --------------------------------------*/
     #dark-box-2 {
-        width: 40px;
+        height: 150%;
     }
+
+    #light-box-2 {
+        height: 150%;
+    }
+
     .container-list-page {
         padding-left: 10px;
         padding-top: 60px;
     }
+
     .fa-ellipsis {
         visibility: visible;
         padding: 10px;
         color: var(--octonary--color);
     }
+
     .fa-ellipsis-vertical {
         position: absolute;
         visibility: hidden;
@@ -758,42 +890,47 @@ td.active {
         top: 10px;
         color: var(--octonary--color);
     }
+
     .exit-section {
         display: none;
     }
+
     .welcome-msg {
         display: none;
     }
+
     .welcome-msg-menu {
         display: block;
+        margin-left: 55px;
         margin-top: 20px;
-        left: 30px;
         color: var(--octonary--color);
     }
+
     #menu {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
     }
+
     .add-button,
     .filter-button,
     .search-input {
         display: none;
     }
+
     .add-button-menu {
         display: block;
         background-color: var(--primary-color);
         width: 218px;
+        height: 50px;
         margin-top: 100px;
+        margin-bottom: 60px;
         border: none;
         border-right: 8px solid var(--quartenary-color);
         border-radius: 0px;
         color: var(--octonary--color);
     }
-    .add-button-mene:target {
-        background-color: var(--quartenary-color);
-        color: var(--senary-color);
-    }
+
     .filter-button-menu {
         display: block;
         background-color: var(--primary-color);
@@ -806,13 +943,16 @@ td.active {
         font-size: 16px;
         color: var(--octonary--color);
     }
+
     .filter-button-menu:hover {
         background-color: var(--quartenary-color);
         color: var(--senary-color);
     }
+
     .search-placeholder {
         display: none;
     }
+
     .exit-icon-menu {
         position: absolute;
         left: 20px;
@@ -821,6 +961,7 @@ td.active {
         color: var(--octonary--color);
         cursor: pointer;
     }
+
     /*--------------------------------------- Modal ----------------------------------------*/
     .modal-content {
         width: 380px;
@@ -828,22 +969,48 @@ td.active {
         margin-left: 20px;
         margin-top: 135px;
     }
+
     .modal-trash-content {
-        margin-left: 70px;
-        margin-top: 190px;
+        width: 380px;
+        margin-left: 20px;
+        margin-top: 180px;
     }
+
     /*-------------------------------------- Table -----------------------------------------*/
     .table-content {
         position: relative;
-        width: 400px;
-        margin-left: 60px;
+        width: 365px;
+        margin-left: 50px;
         margin-top: 30px;
         right: 60px;
     }
+
+    table {
+        font-size: 12px;
+    }
+
+    .arrow-filter-responsive {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .fa-sort-down {
+        position: relative;
+        right: 8px;
+    }
+
+    .arrow-filter {
+        left: 5px;
+        bottom: -18px;
+    }
+
     .fa-pen-to-square {
         color: var(--tertiary-color);
         cursor: pointer;
     }
+
     .fa-trash {
         color: var(--quartenary-color);
         cursor: pointer;
